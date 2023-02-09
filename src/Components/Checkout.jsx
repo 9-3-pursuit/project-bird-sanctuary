@@ -2,7 +2,7 @@ import "./Checkout.css";
 
 export default function Checkout() {
   return (
-    <section className={"border-black"}>
+    <section className={"Checkout section border-black"}>
       <h1>Checkout</h1>
       <form>
         <label htmlFor="first-name">First Name</label>

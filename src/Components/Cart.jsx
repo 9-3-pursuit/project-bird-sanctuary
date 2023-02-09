@@ -2,7 +2,7 @@ import "./Cart.css";
 
 export default function Cart() {
   return (
-    <section className={"border-black"}>
+    <section className={"Cart section border-black"}>
       <h1>Cart</h1>
       <h2>Discount: %0</h2>
       <h2>Total: $0</h2>
