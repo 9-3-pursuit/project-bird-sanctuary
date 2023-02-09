@@ -1,0 +1,17 @@
+.card {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+}
+
+img {
+  height: 10rem;
+  width: 10rem;
+  padding: 1rem;
+}
+
+button:hover {
+  background-color: darkgrey;
+}
