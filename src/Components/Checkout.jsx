@@ -1,6 +1,6 @@
 export default function Checkout() {
   return (
-    <div>
+    <section className={"border-black"}>
       <h1>Checkout</h1>
       <form>
         <label htmlFor="first-name">First Name</label>
@@ -33,6 +33,6 @@ export default function Checkout() {
         />
         <input type="submit"></input>
       </form>
-    </div>
+    </section>
   );
 }
