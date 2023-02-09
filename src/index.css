@@ -1,5 +1,40 @@
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+aside {
+    display: grid;
+    grid-template-rows: 380px;
+    row-gap: 20px;
+}
 
 form, .cart {
+    display: grid;
     border: 1px solid black;
-    height: auto;
+    text-align: center;
+    justify-items: center;
+    height: 380px;
+}
+
+.asideHeader {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+label {
+    font-size: 12px;
+}
+
+input {
+    height: 25px !important;
+    width: 150px;
+}
+
+#submit {
+    color: black !important;
+    font-size: 10px !important;
+    width: 70px;
+    line-height: 0px !important;
+    padding: 0px !important;
 }

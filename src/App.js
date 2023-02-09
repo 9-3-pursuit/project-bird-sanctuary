@@ -2,17 +2,17 @@ import { useState } from "react";
 import birdData from "./data/birds";
 import Birdcard from "./Components/Birdcard";
 import Cart from "./Components/Cart";
-import Checkout from "./Components/Checkout";
+import CheckoutForm from "./Components/CheckoutForm";
 
 function App () {
   return (
-    <div>
+    <main>
       <aside>
         <Cart />
-        <Checkout />
+        <CheckoutForm />
       </aside>
       <Birdcard />
-    </div>
+    </main>
   );
 };
 
