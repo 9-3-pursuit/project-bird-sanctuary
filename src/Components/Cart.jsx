@@ -1,3 +1,5 @@
+import "./Cart.css";
+
 export default function Cart() {
   return (
     <section className={"border-black"}>

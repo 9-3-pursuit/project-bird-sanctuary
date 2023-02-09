@@ -1,3 +1,5 @@
+import "./BirdCard.css";
+
 export default function BirdCard({ name, img, amount, id }) {
   return (
     <div key={id}>
