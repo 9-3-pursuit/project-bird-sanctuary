@@ -1,0 +1,52 @@
+/* Resets */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+nav,
+section {
+  margin: 0;
+  padding: 20;
+  border: 0;
+}
+
+/* App Layout */
+
+main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5rem;
+  padding: 2rem;
+}
+
+section {
+  width: 20rem;
+}
+
+.bird-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row: 1 /3;
+}
+
+/* Utility Classes */
+.border-black {
+  border: black solid 1px;
+}
