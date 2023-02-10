@@ -16,6 +16,6 @@ Inspired by the [Thinking in React](https://beta.reactjs.org/learn/thinking-in-r
    1. ✔︎ Create Checkout component
    1. ✔︎ Style page layout
 
-1. Find the minimal but complete representation of UI state
+1. ✔︎ Find the minimal but complete representation of UI state
 1. Identify where your state should live
 1. Add inverse data flow
