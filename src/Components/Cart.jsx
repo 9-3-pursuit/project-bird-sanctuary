@@ -15,8 +15,11 @@ export default function Cart({ list, total, setTotal }) {
           </li>
         ))}
       </ol>
-      <p>Your donation has qualified you for the following bonuses</p>
-      <ul></ul>
+      <h6>Your donation has qualified you for the following bonuses:</h6>
+      <ul>{total >= 100 && <li>{bonusItems[0]}</li>}</ul>
+      <ul>{total >= 300 && <li>{bonusItems[1]}</li>}</ul>
+      <ul>{total >= 500 && <li>{bonusItems[2]}</li>}</ul>
+      <ul>{total >= 1000 && <li>{bonusItems[3]}</li>}</ul>
     </section>
   );
 }
