@@ -1,0 +1,12 @@
+section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+}
+
+article{
+    background-color: aquamarine;
+    margin: 10px;
+    box-shadow: 2px 2px;
+    padding: 20px;
+}

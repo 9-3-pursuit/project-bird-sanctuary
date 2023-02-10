@@ -1,9 +1,15 @@
-function App () {
+import BirdInfo from "./BirdInfo";
+import birdData from "./data/birds";
+function App() {
+  const birdCollection = birdData.map((bird) => {
+    return <BirdInfo {...bird} key={bird.id} />;
+  });
+  console.log(birdCollection);
   return (
-    <div>
-      <h1>Hello, world!</h1>
-    </div>
+    <>
+      <section className="birds">{birdCollection}</section>
+    </>
   );
-};
+}
 
 export default App;
