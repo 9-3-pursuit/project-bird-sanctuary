@@ -1,7 +1,10 @@
-function App () {
+import birdData from "./data/birds";
+
+function App() {
   return (
-    <div>
-      <h1>Hello, world!</h1>
+    <div className="App">
+
+
     </div>
   );
 };
