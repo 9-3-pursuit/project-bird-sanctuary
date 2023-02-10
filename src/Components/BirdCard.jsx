@@ -1,4 +1,5 @@
 import "./BirdCard.css";
+import { v4 as uuidv4 } from "uuid";
 
 export default function BirdCard({ name, img, amount, id, onClick }) {
   return (
@@ -6,7 +7,9 @@ export default function BirdCard({ name, img, amount, id, onClick }) {
       <h5>{name}</h5>
       <p>Price: ${amount}</p>
       <img src={img} alt={name} />
-      <button onClick={() => onClick({ name: name, amount: amount, id: id })}>
+      <button
+        onClick={() => onClick({ name: name, amount: amount, id: uuidv4() })}
+      >
         {" "}
         Adopt
       </button>

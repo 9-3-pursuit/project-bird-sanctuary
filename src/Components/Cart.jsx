@@ -10,7 +10,7 @@ export default function Cart({ list, total, setTotal }) {
       <h4>Total: ${total - total * discount} </h4>
       <ol>
         {list.map(({ name, amount, id }) => (
-          <li id={id}>
+          <li key={id} id={id}>
             {" "}
             {name}: ${amount}
           </li>
