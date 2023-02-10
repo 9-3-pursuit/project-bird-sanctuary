@@ -7,7 +7,7 @@ describe("Birds cards", () => {
     cy.visit(`http://localhost:${PORT}`);
   });
 
-  it("Displays the name, photo, and amount", () => {
+  it.only("Displays the name, photo, and amount", () => {
     birdData.forEach((bird) => {
       const { name, amount, img } = bird;
 
@@ -135,7 +135,7 @@ describe("It adds bonus items as the total increases", () => {
     });
   });
 
-  it("Can many birds to cart, with correct bonus items", () => {
+  it("Can add many birds to cart, with correct bonus items", () => {
     addManyBirdsToCart();
     cy.get(".Cart").within(() => {
       cy.get("li").contains("Boat Billed Heron");
@@ -173,7 +173,7 @@ describe("Checkout and reset", () => {
     cy.wait(500);
   });
 
-  it("I can complete the inputs in the checkout form", () => {
+  it("It can complete the inputs in the checkout form", () => {
     completeForm();
     const values = Object.values(formData);
     cy.get("input[type=submit]").each((input) => {

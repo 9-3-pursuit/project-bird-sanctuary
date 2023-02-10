@@ -9,6 +9,11 @@ aside {
     row-gap: 20px;
 }
 
+.card {
+    height: 100px;
+    border: 1px solid black;
+}
+
 form, .cart {
     display: grid;
     border: 1px solid black;

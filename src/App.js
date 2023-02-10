@@ -5,13 +5,15 @@ import Cart from "./Components/Cart";
 import CheckoutForm from "./Components/CheckoutForm";
 
 function App () {
+
+
   return (
     <main>
       <aside>
         <Cart />
         <CheckoutForm />
       </aside>
-      <Birdcard />
+      <Birdcard birdData={birdData} />
     </main>
   );
 };
