@@ -19,3 +19,15 @@ Inspired by the [Thinking in React](https://beta.reactjs.org/learn/thinking-in-r
 1. ✔︎ Find the minimal but complete representation of UI state
 1. Identify where your state should live
 1. Add inverse data flow
+
+I also need to keep track of which components/User stories I've built/fulfilled and which I haven't:
+
+### User Stories:
+
+1. ✔︎ I can see sections with birds, that have a name, image, amount and adopt button.
+1. ✔︎ I can add birds to the shopping cart.
+1. ✔︎ I can see a total cost of the birds in my cart.
+1. ✔︎ I can get a 10% discount if I have 3 or more birds in my cart
+1. ✔︎ I can get a series of bonus items for increasing cart totals
+1. I can use a form to checkout my cart, upon checkout, it resets my cart
+1. I can delete a bird from my cart
