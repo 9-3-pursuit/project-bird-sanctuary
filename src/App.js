@@ -19,8 +19,12 @@ function App() {
   }
 
   function handleAddToCart({ name, amount, id }) {
-    setList([...list, { name, amount, id }]);
-    setTotal(total + amount);
+    if (!list.find((entry) => entry.name === name)) {
+      setList([...list, { name, amount, id }]);
+      setTotal(total + amount);
+    } else {
+      alert("This bird is already in your cart");
+    }
   }
 
   return (
