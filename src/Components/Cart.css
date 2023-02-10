@@ -2,3 +2,7 @@
   grid-row: 1 / 2;
   text-align: center;
 }
+
+.Cart > * {
+  margin-bottom: 1rem;
+}
