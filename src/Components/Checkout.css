@@ -2,3 +2,12 @@
   grid-row: 2 / 3;
   text-align: center;
 }
+
+.Checkout h4 {
+  margin-bottom: 1rem;
+}
+
+.Checkout input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
