@@ -6,16 +6,16 @@ export default function Cart({ list, total, setTotal }) {
       <h4>Cart</h4>
       <h5>Discount: 0%</h5>
       <h5>Total: $ {total} </h5>
-      <ul>
+      <ol>
         {list.map(({ name, amount, id }) => (
           <li id={id}>
             {" "}
             {name}: ${amount}
           </li>
         ))}
-      </ul>
+      </ol>
       <p>Your donation has qualified you for the following bonuses</p>
-      <ol></ol>
+      <ul></ul>
     </section>
   );
 }
