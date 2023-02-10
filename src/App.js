@@ -25,7 +25,7 @@ function App() {
 
   return (
     <main>
-      <Cart list={list} total={total} setTotal={setTotal} />
+      <Cart list={list} total={total} setList={setList} setTotal={setTotal} />
       <Checkout onSubmit={handleSubmit} />
       <div className="bird-section">
         {birdData.map(({ name, img, amount, id }) => (

@@ -1,8 +1,15 @@
 import "./Cart.css";
 import bonusItems from "../data/bonusItems";
 
-export default function Cart({ list, total, setTotal }) {
+export default function Cart({ list, total, setList, setTotal }) {
   const discount = list.length >= 3 ? 0.1 : 0;
+
+  function handleClick(e, amount) {
+    let newList = list.filter(({ id }) => id !== e.target.parentNode.id);
+    setList(newList);
+    setTotal(total - amount);
+  }
+
   return (
     <section className={"Cart section border-black"}>
       <h3>Cart</h3>
@@ -13,14 +20,22 @@ export default function Cart({ list, total, setTotal }) {
           <li key={id} id={id}>
             {" "}
             {name}: ${amount}
+            <button
+              className="Cart-button"
+              onClick={(e) => handleClick(e, amount)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ol>
       <h6>Your donation has qualified you for the following bonuses:</h6>
-      <ul>{total >= 100 && <li>{bonusItems[0]}</li>}</ul>
-      <ul>{total >= 300 && <li>{bonusItems[1]}</li>}</ul>
-      <ul>{total >= 500 && <li>{bonusItems[2]}</li>}</ul>
-      <ul>{total >= 1000 && <li>{bonusItems[3]}</li>}</ul>
+      <ul>
+        {total >= 100 && <li>{bonusItems[0]}</li>}
+        {total >= 300 && <li>{bonusItems[1]}</li>}
+        {total >= 500 && <li>{bonusItems[2]}</li>}
+        {total >= 1000 && <li>{bonusItems[3]}</li>}
+      </ul>
     </section>
   );
 }
