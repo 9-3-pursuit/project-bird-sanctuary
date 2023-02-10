@@ -21,9 +21,7 @@ function App() {
   });
   return (
     <>
-      <section className="cartSection">
-        <Cart selected={cart} />
-      </section>
+      <Cart selected={cart} />
       <section className="birds">{birdCollection}</section>
     </>
   );

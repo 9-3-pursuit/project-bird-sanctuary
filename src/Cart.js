@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function Cart(props) {
   console.log(props);
   const cartList = props.selected.map((item) => {
@@ -7,12 +9,18 @@ export default function Cart(props) {
       </li>
     );
   });
+  let total = 0;
+  props.selected.forEach((item) => {
+    total += item.amount;
+  });
   return (
-    <>
-      <h4>Cart</h4>
-      <h5>Discount: </h5>
-      <h5>Total: </h5>
+    <section className="Cart">
+      <h3>Cart</h3>
+      <h4>Discount: </h4>
+      <h4>Total: ${total}</h4>
       <ol className="Cart">{cartList}</ol>
-    </>
+      <p>Your donations have qualified you for the following items:</p>
+      <ul></ul>
+    </section>
   );
 }
