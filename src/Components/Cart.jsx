@@ -1,12 +1,13 @@
 import "./Cart.css";
+import bonusItems from "../data/bonusItems";
 
 export default function Cart({ list, total, setTotal }) {
   const discount = list.length >= 3 ? 0.1 : 0;
   return (
     <section className={"Cart section border-black"}>
-      <h4>Cart</h4>
+      <h3>Cart</h3>
       <h5>Discount: {discount * 100}%</h5>
-      <h5>Total: $ {total - total * discount} </h5>
+      <h4>Total: ${total - total * discount} </h4>
       <ol>
         {list.map(({ name, amount, id }) => (
           <li id={id}>

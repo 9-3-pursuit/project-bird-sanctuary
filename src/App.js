@@ -13,6 +13,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    alert("You have adopted birds. Thank you!");
     console.log("The form was submitted");
   }
 

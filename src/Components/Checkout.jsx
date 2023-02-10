@@ -26,10 +26,10 @@ export default function Checkout({ onSubmit }) {
           type="email"
           placeholder="YourEmail@email.com"
         />
-        <label htmlFor="">Zip-Code</label>
+        <label htmlFor="zip Code">Zip Code</label>
         <input
-          id="Zip-Code"
-          name="Zip-Code"
+          id="zip Code"
+          name="zip Code"
           type="number"
           placeholder="XXXXX"
         />
