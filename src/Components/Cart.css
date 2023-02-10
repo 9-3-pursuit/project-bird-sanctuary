@@ -6,3 +6,8 @@
 .Cart > * {
   margin-bottom: 1rem;
 }
+
+.Cart h6 {
+  font-weight: 900;
+  margin-top: 3.5rem;
+}
