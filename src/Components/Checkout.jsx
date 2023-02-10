@@ -1,10 +1,10 @@
 import "./Checkout.css";
 
-export default function Checkout() {
+export default function Checkout({ onSubmit }) {
   return (
     <section className={"Checkout section border-black"}>
       <h4>Checkout</h4>
-      <form>
+      <form onSubmit={onSubmit}>
         <label htmlFor="first-name">First Name</label>
         <input
           id="first-name"

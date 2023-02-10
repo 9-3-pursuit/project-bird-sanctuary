@@ -1,7 +1,8 @@
+/*           Components           */
 import BirdCard from "./Components/BirdCard";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
-import "./App.css";
+/*         CSS, Data, State         */
 import birdData from "./data/birds";
 import { useState } from "react";
 import "./App.css";
@@ -22,11 +23,18 @@ function App() {
 
   return (
     <main>
-      <Cart />
-      <Checkout />
+      <Cart list={list} total={total} setTotal={setTotal} />
+      <Checkout onSubmit={handleSubmit} />
       <div className="bird-section">
         {birdData.map(({ name, img, amount, id }) => (
-          <BirdCard name={name} img={img} amount={amount} key={id} />
+          <BirdCard
+            name={name}
+            img={img}
+            amount={amount}
+            id={id}
+            key={id}
+            onClick={handleAddToCart}
+          />
         ))}
       </div>
     </main>
