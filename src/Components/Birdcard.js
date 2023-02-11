@@ -4,7 +4,7 @@ import {v1 as generateUniqueID} from "uuid";
 export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
 
 
-    function addCardToCart(bird, index) {
+    function addCardToCart(bird) {
         setCartQueue([...cartQueue, {
             name: bird.name,
             amount: bird.amount,
@@ -14,8 +14,10 @@ export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscoun
 
     }
 
+
     function handleDiscount() {
-        cartQueue.length >= 2 ? setDiscount(10) : setDiscount(0)
+        
+        cartQueue.length + 1 >= 3 ? setDiscount(10) : setDiscount(0)
     }
 
     return(

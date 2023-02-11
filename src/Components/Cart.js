@@ -1,17 +1,21 @@
 import {v1 as generateUniqueID} from "uuid";
 import BonusItem from "./BonusItem";
 
-export default function Cart({ cartQueue, setCartQueue, discount }) {
+export default function Cart({ cartQueue, setCartQueue, discount, setDiscount}) {
     
 
-    const totalAmount = cartQueue.reduce((total, cartItem) => {
+    let totalAmount = cartQueue.reduce((total, cartItem) => {
         return total + cartItem.amount
     }, 0)
 
     function deleteItemFromCart(cartItem) {
         const updatedCart = cartQueue.filter(cartItemObj => cartItemObj.id !== cartItem.id)
-        
-        setCartQueue(updatedCart)
+        cartQueue.length <= 3 ? setDiscount(0) : setDiscount(10);
+        setCartQueue(updatedCart);
+    }
+
+    if(discount === 10) {
+        totalAmount *= .9
     }
 
     return(
