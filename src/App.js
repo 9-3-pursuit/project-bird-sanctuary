@@ -24,7 +24,7 @@ const App = () => {
     setTotal(total + birdFoundInData.amount);
     setCart([...cart, birdFoundInData]);
     if (cart.length > 2) {
-      setDiscount();
+      setDiscount(10);
     }
   };
 
