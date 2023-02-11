@@ -6,7 +6,7 @@ import Checkout from "./components/Checkout";
 
 import { useState } from "react";
 
-import "./App.css";
+import "./styles/App.css";
 
 const App = () => {
   const [cart, setCart] = useState([]);
