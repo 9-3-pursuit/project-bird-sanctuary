@@ -1,8 +1,8 @@
-
+import "./Checkout.css"
 
 function Checkout(){
     return (
-        <div>
+        <div className="checkout">
             <form>
                 <h5>Checkout</h5>
                 <label htmlFor="first_name">First Name</label>
@@ -13,8 +13,7 @@ function Checkout(){
                 <input id="email"></input>
                 <label htmlFor="zip_code">Zip Code</label>
                 <input id="zip_code"></input>
-                <button>SUBMIT</button>
-                
+                <button>SUBMIT</button>   
             </form>
         </div>
     )

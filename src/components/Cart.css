@@ -1,0 +1,11 @@
+.cart {
+    width: 250px;
+    border: 1px solid black;
+}
+
+li {
+    display:list-item;
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
