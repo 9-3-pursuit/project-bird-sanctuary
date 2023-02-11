@@ -7,7 +7,7 @@ describe("Birds cards", () => {
     cy.visit(`http://localhost:${PORT}`);
   });
 
-  it.only("Displays the name, photo, and amount", () => {
+  it("Displays the name, photo, and amount", () => {
     birdData.forEach((bird) => {
       const { name, amount, img } = bird;
 
@@ -24,7 +24,7 @@ const addShoeBillToCart = () => {
 };
 
 const addFlycatcherToCart = () => {
-  cy.get(".birds button").eq(2).click();
+  cy.get(".birds button").eq(2).click().click();
 };
 
 const addBoatBilledHeronToCart = () => {
@@ -117,7 +117,7 @@ describe("It adds bonus items as the total increases", () => {
     cy.visit(`http://localhost:${PORT}`);
     addFlycatcherToCart();
   });
-  it("Can add Flycatcher to cart, with correct bonus items", () => {
+  it.only("Can add Flycatcher to cart, with correct bonus items", () => { 
     cy.get(".Cart").within(() => {
       cy.get("li").contains("Flycatcher");
       cy.get("li").contains("Stickers");

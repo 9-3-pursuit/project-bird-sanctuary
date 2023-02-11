@@ -1,17 +1,25 @@
 
+export default function Birdcard({ birdData, cartQueue, setCartQueue }) {
 
-export default function Birdcard({ birdData }) {
+
+    function addCardToCart(bird) {
+        setCartQueue([...cartQueue, {
+            name: bird.name,
+            amount: bird.amount,
+        }])
+
+    }
 
     return(
-        <div className="cardsDiv">
+        <div className="card">
             {
                 birdData.map(bird => {
                     return(
-                        <div className="card">
+                        <div className="birds" key={bird.id}>
                             <p className="cardHeader">{bird.name}</p>
                             <p className="cardPrice">Price: ${bird.amount}</p>
                             <img className="cardImg" src={bird.img} alt={bird.name} />
-                            <button className="cardButton">Adopt</button>
+                            <button className="cardButton" onClick={() => addCardToCart(bird)}>Adopt</button>
                         </div>
                     )
                 })  

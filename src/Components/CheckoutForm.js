@@ -3,12 +3,12 @@ import { useState } from "react"
 export default function CheckoutForm() {
 
     function handleSubmit(event) {
-        event.preventDefault()
-        alert('You have adopted birds. Thank You.')
+        event.preventDefault();
+        alert('You have adopted birds. Thank You!');
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="Checkout" onSubmit={handleSubmit}>
             <p className="asideHeader">Checkout</p>
             <label htmlFor="firstName">First Name</label>
             <input type="text" id="firstName" required />

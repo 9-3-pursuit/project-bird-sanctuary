@@ -6,14 +6,15 @@ import CheckoutForm from "./Components/CheckoutForm";
 
 function App () {
 
+  const [cartQueue, setCartQueue] = useState([]) 
 
   return (
     <main>
       <aside>
-        <Cart />
+        <Cart cartQueue={cartQueue} setCartQueue={setCartQueue} />
         <CheckoutForm />
       </aside>
-      <Birdcard birdData={birdData} />
+      <Birdcard birdData={birdData} cartQueue={cartQueue} setCartQueue={setCartQueue} />
     </main>
   );
 };
