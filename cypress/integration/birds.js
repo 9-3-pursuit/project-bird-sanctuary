@@ -24,7 +24,7 @@ const addShoeBillToCart = () => {
 };
 
 const addFlycatcherToCart = () => {
-  cy.get(".birds button").eq(2).click().click();
+  cy.get(".birds button").eq(2).click();
 };
 
 const addBoatBilledHeronToCart = () => {
@@ -117,7 +117,7 @@ describe("It adds bonus items as the total increases", () => {
     cy.visit(`http://localhost:${PORT}`);
     addFlycatcherToCart();
   });
-  it.only("Can add Flycatcher to cart, with correct bonus items", () => { 
+  it("Can add Flycatcher to cart, with correct bonus items", () => { 
     cy.get(".Cart").within(() => {
       cy.get("li").contains("Flycatcher");
       cy.get("li").contains("Stickers");
@@ -185,7 +185,7 @@ describe("Checkout and reset", () => {
   });
 
   let stub;
-  it("An alert tells me the purchase was successful and the cart is emptied", () => {
+  it.only("An alert tells me the purchase was successful and the cart is emptied", () => {
     stub = cy.stub();
     cy.on("window:alert", stub)
       .then(() => {

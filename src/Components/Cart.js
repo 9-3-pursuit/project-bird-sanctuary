@@ -1,14 +1,14 @@
-import { useState } from "react"
 import {v1 as generateUniqueID} from "uuid";
 import BonusItem from "./BonusItem";
 
-export default function Cart({ cartQueue, setQueue }) {
-    const [discount, setDiscount] = useState(0);
+export default function Cart({ cartQueue, discount }) {
+    
 
     const totalAmount = cartQueue.reduce((total, cartItem) => {
         return total + cartItem.amount
     }, 0)
 
+    
 
     return(
         <div className="Cart">

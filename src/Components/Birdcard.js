@@ -1,5 +1,5 @@
 
-export default function Birdcard({ birdData, cartQueue, setCartQueue }) {
+export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
 
 
     function addCardToCart(bird) {
@@ -7,7 +7,14 @@ export default function Birdcard({ birdData, cartQueue, setCartQueue }) {
             name: bird.name,
             amount: bird.amount,
         }])
+        handleDiscount();
 
+    }
+
+    function handleDiscount() {
+        console.log(cartQueue)
+        console.log(cartQueue.length)
+        cartQueue.length >= 2 ? setDiscount(10) : setDiscount(0)
     }
 
     return(

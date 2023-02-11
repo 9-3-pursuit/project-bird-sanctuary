@@ -107,10 +107,14 @@ input {
 
 .donations {
     font-weight: 600;
+    margin: 0;
 }
 
-ol, 
-.item {
+
+
+ol,
+.item, 
+.bonusItem {
     margin: 0;
 }
 
