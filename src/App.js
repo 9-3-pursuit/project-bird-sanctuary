@@ -49,7 +49,7 @@ const App = () => {
       </div>
       <div className="birds">
         {birdData.map((bird) => {
-          return <BirdCard bird={bird} handleAdoptClick={handleAdoptClick} cart={cart} />;
+          return <BirdCard bird={bird} handleAdoptClick={handleAdoptClick} />;
         })}
       </div>
     </div>
