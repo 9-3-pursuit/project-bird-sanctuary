@@ -41,10 +41,18 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Bird Sanctuary Project!</h1>
+    <div className="main-container">
+      <div className="side-bar">
+        <Cart cart={cart} total={total} discount={discount} handleDeleteClick={handleDeleteClick} />
+        <br />
+        <Checkout resetCart={resetCart} />
+      </div>
+      <div className="birds">
+        {birdData.map((bird) => {
+          return <BirdCard bird={bird} handleAdoptClick={handleAdoptClick} cart={cart} />;
+        })}
+      </div>
     </div>
   );
 };
-
 export default App;
