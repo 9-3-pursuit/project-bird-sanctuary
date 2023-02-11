@@ -1,3 +1,4 @@
+import birdData from "./data/birds";
 import "./App.css";
 
 const App = () => {
