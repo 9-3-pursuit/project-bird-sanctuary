@@ -1,14 +1,18 @@
 import {v1 as generateUniqueID} from "uuid";
 import BonusItem from "./BonusItem";
 
-export default function Cart({ cartQueue, discount }) {
+export default function Cart({ cartQueue, setCartQueue, discount }) {
     
 
     const totalAmount = cartQueue.reduce((total, cartItem) => {
         return total + cartItem.amount
     }, 0)
 
-    
+    function deleteItemFromCart(cartItem) {
+        const updatedCart = cartQueue.filter(cartItemObj => cartItemObj.id !== cartItem.id)
+        
+        setCartQueue(updatedCart)
+    }
 
     return(
         <div className="Cart">
@@ -23,7 +27,7 @@ export default function Cart({ cartQueue, discount }) {
                     return(
                         <li key={generateUniqueID()} className="item">
                             {cartItem.name} ${cartItem.amount}
-                            <button className="delete">
+                            <button className="delete" onClick={() => deleteItemFromCart(cartItem)}>
                                 <span className="material-symbols-outlined">
                                     delete
                                 </span>
