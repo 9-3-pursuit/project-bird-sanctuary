@@ -110,14 +110,30 @@ input {
     margin: 0;
 }
 
-
-
 ol,
 .item, 
 .bonusItem {
     margin: 0;
 }
 
+.item {
+
+}
+
 h4 {
     font-size: 16px;
 }
+
+.delete {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    line-height: 0;
+    border: none;
+    cursor: pointer;
+    margin-left: 0px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+

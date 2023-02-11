@@ -1,26 +1,27 @@
+import {v1 as generateUniqueID} from "uuid";
+
 
 export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
 
 
-    function addCardToCart(bird) {
+    function addCardToCart(bird, index) {
         setCartQueue([...cartQueue, {
             name: bird.name,
             amount: bird.amount,
+            id: generateUniqueID()
         }])
         handleDiscount();
 
     }
 
     function handleDiscount() {
-        console.log(cartQueue)
-        console.log(cartQueue.length)
         cartQueue.length >= 2 ? setDiscount(10) : setDiscount(0)
     }
 
     return(
         <div className="card">
             {
-                birdData.map(bird => {
+                birdData.map((bird) => {
                     return(
                         <div className="birds" key={bird.id}>
                             <p className="cardHeader">{bird.name}</p>

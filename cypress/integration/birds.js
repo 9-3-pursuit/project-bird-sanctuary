@@ -185,7 +185,7 @@ describe("Checkout and reset", () => {
   });
 
   let stub;
-  it.only("An alert tells me the purchase was successful and the cart is emptied", () => {
+  it("An alert tells me the purchase was successful and the cart is emptied", () => {
     stub = cy.stub();
     cy.on("window:alert", stub)
       .then(() => {

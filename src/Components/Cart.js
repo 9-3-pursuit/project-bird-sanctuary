@@ -21,7 +21,14 @@ export default function Cart({ cartQueue, discount }) {
                 <ol>
                 {cartQueue.map(cartItem => {
                     return(
-                        <li key={generateUniqueID()} className="item">{cartItem.name} ${cartItem.amount}</li>
+                        <li key={generateUniqueID()} className="item">
+                            {cartItem.name} ${cartItem.amount}
+                            <button className="delete">
+                                <span className="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
+                        </li>
                     )
                 })}
             </ol>

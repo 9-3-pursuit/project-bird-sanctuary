@@ -9,11 +9,12 @@ function App () {
 
   const [cartQueue, setCartQueue] = useState([]) 
 
+  console.log(cartQueue)
   return (
     <main>
       <aside>
         <Cart cartQueue={cartQueue} discount={discount} />
-        <CheckoutForm />
+        <CheckoutForm setCartQueue={setCartQueue} setDiscount={setDiscount} />
       </aside>
       <Birdcard 
         birdData={birdData} 
