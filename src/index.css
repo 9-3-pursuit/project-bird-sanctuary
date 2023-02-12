@@ -1,0 +1,33 @@
+main {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2em;
+    background-color: pink;
+  }
+
+.card {
+    width: 70%;
+}
+
+ .card img {
+    width: 200px;
+    max-height: 300px;
+    margin: auto;
+ }
+
+ .card li {
+    width: 48%;
+    min-height: 360px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+
