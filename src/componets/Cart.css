@@ -1,3 +1,7 @@
 .Cart {
-    border: 2px solid black;
+    border: 5px solid skyblue;
+    border-radius: 5px;
+    text-align: center;
+    background-color: beige;
+    margin: 10px 25px 0px 25px;
 }

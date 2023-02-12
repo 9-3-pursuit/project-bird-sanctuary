@@ -1,0 +1,12 @@
+.checkout {
+    border: 5px solid skyblue;
+    border-radius: 5px;
+    text-align: center;
+    background-color: beige;
+    margin: 10px 25px 0px 25px;
+}
+.button {
+    color: black;
+    border-color: black;
+    background-color: skyblue;
+}
