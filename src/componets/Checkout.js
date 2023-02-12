@@ -15,7 +15,7 @@ function Checkout (props) {
                 <label htmlFor="zipCode">Zip Code</label>
                 <input id="zipCode" type="number"></input>
                 <br></br>
-                <button className="button" type="submit">Submit</button>
+                <input className="button" type="submit"></input>
             </form>
         </div>
     );

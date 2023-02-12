@@ -25,7 +25,7 @@ function Cart (props) {
                 {props.adoptedBirds.map((bird, index) => {return(
                     <li key={index}>
                         {bird.birdName} ${bird.birdCost}
-                        <button value={index} onClick={props.removeLi}>unAdopt</button>
+                        <button className="cartButton" value={index} onClick={props.removeLi}>unAdopt</button>
                     </li>
                 )})}
             </ol>

@@ -36,8 +36,11 @@ function App () {
 
   return (
     <div className="birdSanctuary">
-      <Cart adoptedBirds={adoptedBirds} items={bonusItems} total={total} removeLi={removeLi}/>
-      <Checkout handleFormSubmit={handleFormSubmit}/>
+      <main>
+        <Cart adoptedBirds={adoptedBirds} items={bonusItems} total={total} removeLi={removeLi}/>
+        <br></br>
+        <Checkout handleFormSubmit={handleFormSubmit}/>
+      </main>
       <BirdCards birds={birdData} adoptBird={adoptBird}/>
     </div>
   );
