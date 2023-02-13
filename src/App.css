@@ -1,0 +1,36 @@
+.header {
+    text-align: center;
+}
+#grid {
+    display: grid;
+    /* box-sizing: border-box; */
+    width: 50%;
+    height: 50%;
+    grid-template-columns: 1fr 1fr 1fr;
+ 
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-gap: 5px;
+    margin-left: auto;
+    margin-right: 0;
+}
+   
+    
+  
+#grid .card {
+    text-align: center;
+    background-color: rgb(187, 219, 219);
+    border: 2px solid gray;
+    padding: .5em;
+}
+.cart {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    padding: 50px;
+    border: 2px solid black;
+    min-height: 400px;
+    min-width: 250px;
+    align-content: initial;
+    text-align: start;
+}

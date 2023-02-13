@@ -1,3 +1,3 @@
-export default Checkout() {
-    
+export default function Checkout() {
+    return null;
 }
