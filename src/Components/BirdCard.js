@@ -1,21 +1,25 @@
 import birdData from "../data/birds";
 
 function BirdCard({ myCart, setMyCart }) {
-    function addToCart(bird) {
+    function addBirdsToCart(bird) {
      
-      let arr = myCart.adopted
-      let adoptedBird = bird.name + ' $' + bird.amount
-      let cart= {total: myCart.total + bird.amount, adopted: [...arr,adoptedBird] }
+      const myArr = myCart.adopted
+      const adoptedBird = {birdName: bird.name, birdAmount: bird.amount}
+      myArr.push(adoptedBird)
+
+      const amountTotal = myArr.map((x) => x.birdAmount).reduce((a, b) => a + b, 0)
+
+      const mySecondCart= {total: amountTotal,  adopted: myArr}
      
-      if(cart.adopted.length >= 3) {
+      if(mySecondCart.adopted.length >= 3) {
      
-       let totalDisc = (cart.total * 0.9)
-       let adopted2 = cart.adopted
-       let cart2 = {adopted: adopted2, discount: true, total: totalDisc }
+       const discountTotal = (amountTotal * 0.9)
+       const adoptedBirds = mySecondCart.adopted
+       const cart = {total: discountTotal, discount: true,  adopted: adoptedBirds }
        
-       setMyCart(cart2)
+       setMyCart(cart)
       } else {
-      setMyCart(cart)}
+      setMyCart(mySecondCart)}
 
     } 
 
@@ -24,11 +28,11 @@ function BirdCard({ myCart, setMyCart }) {
         <ul>
             {birdData.map((bird, index) => {
         return (
-            <li key={index}>
+            <li key={index} className='Card'>
                 <h3>{bird.name}</h3>
                 <img src={bird.img} alt=''/>
                 <p>Price {bird.amount}</p>
-                <button onClick={() => addToCart(bird)}>Adopt</button>
+                <button onClick={() => addBirdsToCart(bird)}>Adopt</button>
             </li>
         )
     })

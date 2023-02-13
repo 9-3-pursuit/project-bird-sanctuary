@@ -1,3 +1,5 @@
+import React from "react";
+
 const bonusItems = [
   "Stickers",
   "Background for your computer",
