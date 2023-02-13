@@ -23,32 +23,38 @@ export default function Checkout() {
     function handleSubmit(event) {
         event.preventDefault();
         setSubmit(event.target.value)
+        alert("You have adopted birds. Thank you!")
     }
     return (
-        <form>
-            <input
-                type="text"
-                placeholder="First Name"
-                onChange={handleFirstNameChange}
-            />
-            <input
-                type="text"
-                placeholder="Last Name"
-                onChange={handleLastNameChange}
-            />
-            <input
-                type="text"
-                placeholder="Email"
-                onChange={handleLastNameChange}
-            />
-            <input
-                type="text"
-                placeholder="Zip Code"
-                onChange={handleZipCodeChange}
-            />
-            <button onSubmit={handleSubmit}>Adopt</button>
-
-        </form>
+        <div>
+            <h3>Checkout
+                <form onSubmit={handleSubmit}>
+                    <h6>
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            onChange={handleFirstNameChange}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Last Name"
+                            onChange={handleLastNameChange}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            onChange={handleEmailChange}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Zip Code"
+                            onChange={handleZipCodeChange}
+                        />
+                        <button>Submit</button>
+                    </h6>
+                </form>
+            </h3>
+        </div>
     )
 }
 

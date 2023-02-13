@@ -9,16 +9,18 @@ import bonusItems from "./data/bonusItems"
 // import ".App.css";
 
 function App() {
-
+  const [total, setTotal] = useState(0);
+  const [birdCart, setBirdCart] = useState([]);
+  const [discount, setDiscount] = useState(0);
+  const [bonusItems, setBonusItems] = useState({})
   return (
     <div>
-      <AllBirds birdData={birdData} />;
+      <AllBirds birdData={birdData} setBirdCart={setBirdCart} birdCart={birdCart} />;
       <main className="container">
         <section className="sidebar"><Checkout />
         </section>
-        <section className="cart"><Cart birdData={birdData} />
+        <section className="cart"><Cart birdCart={birdCart} discount={discount} />
         </section >
-
       </main>
     </div>
   );
