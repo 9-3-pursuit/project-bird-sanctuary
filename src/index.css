@@ -1,0 +1,45 @@
+
+main {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2em;
+    background-color: rgb(204, 200, 200);
+  }
+
+.card {
+    width: 70%;
+  }
+
+ 
+  .card img {
+    width: 180px;
+    max-height: 250px;
+    margin: auto;
+  }
+
+  .card li {
+    width: 40%;
+    min-height: 360px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+  
+  }
+
+  .delbutton {
+    background-color: rgb(220, 242, 177);
+  }
+
+
+  .leftaside {
+    margin: 20px;
+    border: 2px solid black;
+  }
