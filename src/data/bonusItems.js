@@ -5,7 +5,7 @@ const bonusItems = [
   "Invites to VIP live streams",
 ];
 
-function bonus({ total }) {
+function Bonus({ total }) {
   let addBonus = []
   if ((total >= 100) & (total < 300)) {
     addBonus = [...addBonus, bonusItems[0]]
@@ -18,7 +18,7 @@ function bonus({ total }) {
   }
   return (
     <ul>
-      {addBonus.map((bonus, index) => <li key={index} className="cart">{bonus}</li>)}
+      {addBonus.map((bonus, index) => <li key={index} className="Cart">{bonus}</li>)}
     </ul>
 
   )
@@ -27,4 +27,4 @@ function bonus({ total }) {
 
 
 
-export default bonusItems;
+export default Bonus;

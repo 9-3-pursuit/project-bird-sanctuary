@@ -39,12 +39,12 @@ The following demo has been styled for clarity. You do not need to style this ap
 ## User Stories
 
 1. I can see sections with birds, that have a name, image, amount and adopt button.
-1. I can add birds to the shopping cart.
+1. I can add birds to the shopping cart. section
 1. I can see a total cost of the birds in my cart.
-1. I can get a 10% discount if I have 3 or more birds in my cart
-1. I can get a series of bonus items for increasing cart totals
-1. I can use a form to checkout my cart, upon checkout, it resets my cart
-1. I can delete a bird from my cart
+1. I can get a 10% discount if I have 3 or more birds in my cart 
+1. I can get a series of bonus items for increasing cart totals 
+1. I can use a form to checkout my cart, upon checkout, it resets my cart 
+1. I can delete a bird from my cart 
 
 ## Acceptance criteria and tests
 

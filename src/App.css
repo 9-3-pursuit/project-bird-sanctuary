@@ -1,13 +1,13 @@
-/* .card {
+.Card {
     width: 70%;
 }
-.card img{
+.Card img{
     width: 200px;
     max-height: 300px;
     margin:auto
 }
 
-.card li {
+.Card li {
     width: 48%;
     min-height: 360px;
     box-shadow: 2px 2px 4px black;
@@ -27,4 +27,4 @@ main {
     flex-wrap: wrap;
     padding: 2em;
     background-color: pink;
-} */
+}

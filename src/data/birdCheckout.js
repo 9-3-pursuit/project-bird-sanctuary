@@ -7,83 +7,63 @@
 //   - Alert text should include: `You have adopted birds. Thank you!`
 // - When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
-// import { useState } from "react"
-
-
-export default function Checkout({ customer, resetBirdForm, setCustomerInfo}) {
-    // const [checkout, setCheckout] = useState() // * state var. for checkout
-    // const [customer, setCustomerInfo] = useState({
-    //     firstName: " ",
-    //     lastName: " ",
-    //     email: " ",
-    //     zipcode: " ",
-    // })
-
-    function handleSubmit(event) { // * handle for submit button of user form info
+export default function Checkout({ cart, setCart }) {
+    // * handle for submit button of user form info of :
+    // * first name,last name, email, zipcode
+    // * alert when order is complete, 
+    
+    // ! only part working besides the functionailty for the submit form is alert
+    function handleSubmit(event) { 
         event.preventDefault();
         alert("You have adopted birds. Thank you!")
-        resetBirdForm()
-       
-        // if (customer === 0) {
-        //     alert("You have adopted birds. Thank you!")
-        // } else {
-        //     resetBirdForm();
-        //     alert("No information found.")
-
-        // }
-
-    }
-    function handleTextChange(event) { // * handle for bird options user puts in
-        setCustomerInfo({ ...customer, [event.target.id]: event.target.value }) // ? computes the properties names
+        event.target.firstname.value = ""
+        event.target.lastname.value = ""
+        event.target.email.value = ""
+        event.target.zipcode.value = ""
+        setCart({ total: 0, discount:false, adoptInfo: [] })
 
 
     }
 
-
-    // function resetBirdForm() { // * reset of form 
-    //     setCustomerInfo({
-    //         firstName: " ",
-    //         lastName: " ",
-    //         email: " ",
-    //         zipcode: " ",
-    //     })
-    // }
-
+// * return of user submit form with first & last name, email and zip-code
     return (
-        <form onSubmit={handleSubmit} className="form">
-            <h2 className="checkout">Checkout</h2>
-            <label htmlFor="firstName">First Name: </label>
-            <input
-                type="text"
-                id="firstName"
-                value={customer.firstName}
-                onChange={handleTextChange} />
+        <div className="Checkout">
+            <form onSubmit={handleSubmit} className="form">
+                <h2 className="checkout">Checkout</h2>
+                <label htmlFor="First Name">First Name: </label>
+                <input
+                    type="text"
+                    id="firstName"
+                    value={cart.firstName}
+                />
 
-            <label htmlFor="lasttName">Last Name: </label>
-            <input
-                type="text"
-                id="lastName"
-                value={customer.lastName}
-                onChange={handleTextChange} />
+                <label htmlFor="Last Name">Last Name: </label>
+                <input
+                    type="text"
+                    id="lastName"
+                    value={cart.lastName}
+                />
 
-            <label htmlFor="email">Email: </label>
-            <input
-                type="text"
-                id="email"
-                value={customer.email}
-                onChange={handleTextChange} />
+                <label htmlFor="Email">Email: </label>
+                <input
+                    type="text"
+                    id="email"
+                    value={cart.email}
+                />
 
-            <label htmlFor="zipCode">Zip Code: </label>
-            <input
-                type="number"
-                id="zipcode"
-                value={customer.zipcode}
-                onChange={handleTextChange} />
-            <br />
-            <label htmlFor="submit"></label>
-            <button onSubmit={handleSubmit} type="submit">Submit</button>
+                <label htmlFor="Zip Code">Zip Code: </label>
+                <input
+                    type="number"
+                    id="zipcode"
+                    value={cart.zipcode}
+                />
+                <br />
+                <input className="submit" type="submit"></input>
+                {/* <button onSubmit={handleSubmit} type="submit">Submit</button> */}
 
-        </form>
+            </form>
+        </div>
+
     )
 
 }
