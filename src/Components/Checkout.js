@@ -1,16 +1,14 @@
 function Checkout ({cart, setMyCart}) {
-
-   function handleSubmit(event) {
-    event.preventDefault();
-    
-        window.alert("You have adopted birds. Thank you!")
-    
-    event.target.fname.value = '';
-    event.target.lname.value = '';
-    event.target.email.value = '';
-    event.target.zipcode.value = '';
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+            window.alert("You have adopted birds. Thank you!")
+        
+        event.target.fname.value = '';
+        event.target.lname.value = '';
+        event.target.email.value = '';
+        event.target.zipcode.value = '';
     setMyCart({total: 0, discount: false, adopted:[]})
-
 }
 
     return(

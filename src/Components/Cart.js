@@ -1,22 +1,11 @@
 import bonusItems from "../data/bonusItems"
 
 function Cart({myCart, setMyCart}) {
-    function deleteBirdFromCart(index) {
-        let tempArr = myCart.adopted
-        tempArr = tempArr.filter((event, i) => i !== index)
-        let qualifiedForDiscount = false
+    let tempArr = myCart.adopted
+    let amountTotal = tempArr.map((x) => x.birdAmount).reduce((a,b) => a + b, 0)
 
-        let amountTotal = tempArr.map((x) => x.birdAmount).reduce((a,b) => a + b, 0)
-            if (tempArr.length >= 3) {
-                amountTotal = amountTotal * 0.9
-                qualifiedForDiscount = true
-            }
-
-            let updatedCart= {total: amountTotal, discount: qualifiedForDiscount, adopted: tempArr}
-            setMyCart(updatedCart);
-     
-         //Bonus Requirements
-         let bonus = []; 
+            //Bonus Requirements
+        let bonus = []; 
           amountTotal = tempArr.map((x) => x.birdAmount).reduce((a,b) => a + b, 0)  
          if (amountTotal >= 100) {
             bonus.push(bonusItems[0]);
@@ -30,9 +19,20 @@ function Cart({myCart, setMyCart}) {
          if (amountTotal >= 1000) {
             bonus.push(bonusItems[0], bonusItems[1], bonusItems[2],  bonusItems[3]);
          }
-}
 
-      
+    function deleteBirdFromCart(index) { 
+        tempArr = tempArr.filter((event, i) => i !== index)
+        let qualifiedForDiscount = false
+
+            if (tempArr.length >= 3) {
+                amountTotal = amountTotal * 0.9
+                qualifiedForDiscount = true
+            }
+
+            let updatedCart= {total: amountTotal, discount: qualifiedForDiscount, adopted: tempArr}
+            setMyCart(updatedCart);  
+}
+ 
     return(
        <div className='Cart'>
         <h2>Cart</h2> 
@@ -46,7 +46,7 @@ function Cart({myCart, setMyCart}) {
             </li>))}
         </ol>
         <p>Your donation has qualified for the following bonus items:</p>
-        <ul>{bonusItems.map(( b,index ) => { return <li key={index}>{b}</li>;})}</ul>
+        <ul>{bonus.map(( b,index ) => { return <li key={index}>{b}</li>;})}</ul>
        </div>
     )
 }
