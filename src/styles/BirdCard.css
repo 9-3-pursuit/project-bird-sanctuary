@@ -1,0 +1,13 @@
+.birdCard {
+  padding: 2em;
+  width: 25em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.birdCard img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  border-radius: 1em;
+}
