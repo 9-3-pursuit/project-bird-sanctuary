@@ -7,70 +7,83 @@
 //   - Alert text should include: `You have adopted birds. Thank you!`
 // - When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
-import { useState } from "react"
+// import { useState } from "react"
 
 
-export default function Checkout({handleSubmit, handleTextChangeBird,resetBirdForm,}) {
+export default function Checkout({ customer, resetBirdForm, setCustomerInfo}) {
     // const [checkout, setCheckout] = useState() // * state var. for checkout
-    const [customer, setCustomerInfo] = useState({
-        firstName: " ",
-        LastName: " ",
-        email: " ",
-        zipcode: " ",
-    })
+    // const [customer, setCustomerInfo] = useState({
+    //     firstName: " ",
+    //     lastName: " ",
+    //     email: " ",
+    //     zipcode: " ",
+    // })
 
     function handleSubmit(event) { // * handle for submit button of user form info
         event.preventDefault();
-        resetBirdForm();
-        alert(`You have adopted birds. Thank you!`)
+        alert("You have adopted birds. Thank you!")
+        resetBirdForm()
        
-     }
-    function handleTextChangeBird(event) { // * handle for bird options user puts in
-        setCustomerInfo({...customer,[event.target.id]: event.target.value}) // ? computes the properties names
+        // if (customer === 0) {
+        //     alert("You have adopted birds. Thank you!")
+        // } else {
+        //     resetBirdForm();
+        //     alert("No information found.")
+
+        // }
+
+    }
+    function handleTextChange(event) { // * handle for bird options user puts in
+        setCustomerInfo({ ...customer, [event.target.id]: event.target.value }) // ? computes the properties names
 
 
     }
 
 
-    function resetBirdForm() { // ! this might be changed to a cart reset not card reset(?)
-        setCustomerInfo([])
-    }
+    // function resetBirdForm() { // * reset of form 
+    //     setCustomerInfo({
+    //         firstName: " ",
+    //         lastName: " ",
+    //         email: " ",
+    //         zipcode: " ",
+    //     })
+    // }
 
-return (
-    <form onSubmit={handleSubmit} className="form">
-        <h2 className="checkout">Checkout</h2>
-        <label htmlFor="firstName">First Name: </label>
-        <input
-        type="text"
-        id="firstName"
-        value={customer.firstName}
-        onChange={handleTextChangeBird} />
-        
-        <label htmlFor="lasttName">Last Name: </label>
-        <input
-        type="text"
-        id="lastName"
-        value={customer.lastName}
-        onChange={handleTextChangeBird} />
+    return (
+        <form onSubmit={handleSubmit} className="form">
+            <h2 className="checkout">Checkout</h2>
+            <label htmlFor="firstName">First Name: </label>
+            <input
+                type="text"
+                id="firstName"
+                value={customer.firstName}
+                onChange={handleTextChange} />
 
-<label htmlFor="email">Email: </label>
-        <input
-        type="text"
-        id="email"
-        value={customer.email}
-        onChange={handleTextChangeBird} />
+            <label htmlFor="lasttName">Last Name: </label>
+            <input
+                type="text"
+                id="lastName"
+                value={customer.lastName}
+                onChange={handleTextChange} />
 
-<label htmlFor="zipCode">Zip Code: </label>
-        <input
-        type="number"
-        id="zipCode"
-        value={customer.zipCode}
-        onChange={handleTextChangeBird} />
-        <br />
+            <label htmlFor="email">Email: </label>
+            <input
+                type="text"
+                id="email"
+                value={customer.email}
+                onChange={handleTextChange} />
 
-        <button className="button" type="Submit">Submit</button>
+            <label htmlFor="zipCode">Zip Code: </label>
+            <input
+                type="number"
+                id="zipcode"
+                value={customer.zipcode}
+                onChange={handleTextChange} />
+            <br />
+            <label htmlFor="submit"></label>
+            <button onSubmit={handleSubmit} type="submit">Submit</button>
 
-    </form>
-)
+        </form>
+    )
 
 }

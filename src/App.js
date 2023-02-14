@@ -1,62 +1,84 @@
 import { useState } from "react";
 import Card from "./data/birdCard.js";
 import Cart from "./data/birdCart.js";
-import Checkout from "./data/birdCheckout.js";
-import birdArr from "./data/birds.js";
-import bonus from "./data/bonusItems.js"
+// import Checkout from "./data/birdCheckout.js";
+// import birdArr from "./data/birds.js";
+// import bonus from "./data/bonusItems.js"
+// import "./App.css"
 
-// ! for 2/12-> 
-// start checkout js []
-// fix up cart js file []
-// manage the bonus items being imported from js []
-
-// import bonusItems from "./bonusItems.js";
 function App() {
-  const [card, setCard] = useState() // * state var. for card
+  const [discount, setDiscount] = useState(false)
   const [cart, setCart] = useState([]) // * state var. for cart
+  const [total, setTotal] = useState(0)
+  //   const [customer, setCustomerInfo] = useState({
+  //     firstName: " ",
+  //     lastName: " ",
+  //     email: " ",
+  //     zipcode: " ",
+  // })
+
+  // ! possibly add a create event on here to pass into card.js file
+
+  // const [newBird, setNewBird] = useState(birdArr)
+
+  //  const [newBird, setNewBird]=useState(0)
   // const [checkout, setCheckout] = useState() // * state var. for checkout
-
-
   // const [discount, setDiscount] = useState() // * state var. for discounts
   // const [bonus, setBonus] = useState(10)
   // const [bird,setBirdInfo]=useState(birdInput)
 
-  // function handleSelectBird(event) { // * handle for bird options
-  //  if(!card || !checkout){
-  //     setCart(true)
-  //     return setCart(`You have adopted birds. Thank you!`)
-  //     console.log(setCart)
+
+  // function addBird({newBird, setNewBird}){
+  //   // const [newBird, setNewBird]=useState(0)
+  //   const currentBird = cart.find((info)=>info.id === info.id)
+  //   if(currentBird){
+  //     return alert("Bird is already added to cart")
+  //   } else{
+  //     setNewBird(cart + newBird.amount)
+  //     setCart([...cart,cardBird])
+
   //   }
-  //   if(card.includes(event)){
-  //   alert(`Bird already added to cart`)
-  //   } 
-
-
-
-  //  }
-
-  // function handleSubmit(event) { // * handle for submit button
-  //   event.preventDefault();
-  //   alert(`You have adopted birds. Thank you!`);
-  //   resetBirdForm();
-  //   // if(!card || !checkout){
-  //   //   setCart(true)
-  //   //   return setCart(`You have adopted birds. Thank you!`)
-  //   //   console.log(setCart)
-  //   // }
-  // }
-  // function resetBirdForm() { // ! this might be changed to a cart reset not card reset(?)
-  //   setCard([])
   // }
 
+  // function setCard(bird){
+  //   const newCart = [... cart]
+  //   newCart.push(bird)
+  //   setCart(newCart)
+  // }
+  // function clearedBird(noBird){
+  //   const newCart= [...cart]
+  //   newCart.splice(noBird,1)
+  //   setCart(newCart)
+  // }
+  // function resetCart(){
+  //   setCart([])
+  // }
+  // function newBird(birdId) {
+  //   if(cart.some(bird => bird.id===birdId)) {
+  //     alert("Bird is already in the cart")
+  //   } else {
+  //     const theBird = cardBird.find(bird=> bird.id=== birdId)
+  //     setCart([...cart, theBird])
+  //   }
+  // }
+
+  // function resetBirdForm() { // * reset of form 
+  //   setCustomerInfo({
+  //       firstName: " ",
+  //       lastName: " ",
+  //       email: " ",
+  //       zipcode: " ",
+  //   })
+
+  // }
 
   return (
     <div className="main">
       <h1>The Bird Sanctuary🪶</h1>
-      <Cart birdCart={Cart} cart={cart} setCart={setCart} bonus={bonus}/>
-      <Checkout checkout={Checkout}/> 
-      <Card setCard={setCard} birdInfo={birdArr} />
-      {/* <Bonus bonus={Bonus} /> */}
+      <Cart discount={discount}  total={total}  cart={cart} setCart={setCart} setTotal={setTotal} setDiscount={setDiscount}  />
+      {/* <Checkout checkout={Checkout} customer={customer} resetBirdForm={resetBirdForm} setCustomerInfo={setCustomerInfo} /> */}
+      <Card cart={cart} total={total} setTotal={setTotal} setDiscount={setDiscount} />
+      <Bonus />
     </div>
 
   );

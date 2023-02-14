@@ -5,19 +5,41 @@
 // - Each bird card has an `Adopt` button
 //   - The button text should be: `Adopt`
 
-import React from "react";
+
+import birdData from "./birds.js";
 
 
-export default function Card({ setCard, birdInfo }) {
+
+export default function Card({ cart, total, setTotal,setDiscount}) {
+    function adopt(bird) {
+        setTotal(total + bird.amount)
+       
+        let arr = cart
+        let adoptInfo = { birdname: bird.name, birdamt: bird.amount }
+        
+        arr.push(adoptInfo)
+        let newTotal = arr.map((x) => x.birdamt).reduce((a,b)=> a+b,0)
+
+      
+        if (arr.length >= 3) {
+           
+            setDiscount(true)
+             setTotal(newTotal * 0.9)
+        
+        } else{
+            setTotal(newTotal)
+        }
+
+    }
     return (
         <div className="card">
-            {birdInfo.map((birdClicked) => {
+            {birdData.map((bird) => {
                 return (
-                    <div key={birdClicked.id} className="birds">
-                        <h4>{birdClicked.name}</h4>
-                        <img src={birdClicked.img} alt={birdClicked.name} />
-                        <p>Price: $ {birdClicked.amount}</p>
-                        <button value="click" onClick={() => setCard(birdClicked.id)}>Adopt</button>
+                    <div key={bird.id} className="birds">
+                        <h4>{bird.name}</h4>
+                        <img src={bird.img} alt={bird.name} />
+                        <p>Price: $ {bird.amount}</p>
+                        <button onClick={() => adopt(bird)} >Adopt</button>
                     </div>
                 )
             })}

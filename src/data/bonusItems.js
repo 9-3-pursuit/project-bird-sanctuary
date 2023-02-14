@@ -5,4 +5,26 @@ const bonusItems = [
   "Invites to VIP live streams",
 ];
 
+function bonus({ total }) {
+  let addBonus = []
+  if ((total >= 100) & (total < 300)) {
+    addBonus = [...addBonus, bonusItems[0]]
+  } if ((total >= 300) & (total < 500)) {
+    addBonus = [...addBonus, bonusItems[0], bonusItems[1]]
+  } if ((total >= 500) & (total <= 1000)) {
+    addBonus = [...addBonus, bonusItems[0], bonusItems[1], bonusItems[2]]
+  } if ((total > 1000)) {
+    addBonus = [...addBonus, bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3]]
+  }
+  return (
+    <ul>
+      {addBonus.map((bonus, index) => <li key={index} className="cart">{bonus}</li>)}
+    </ul>
+
+  )
+
+}
+
+
+
 export default bonusItems;
