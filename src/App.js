@@ -31,9 +31,6 @@ const App = () => {
     const birdFoundInData = birdData.find((bird) => bird.id === birdID);
     setTotal(total + birdFoundInData.amount);
     setCart([...cart, birdFoundInData]);
-    // if (cart.length >= 3) {
-    //   setDiscount(10);
-    // }
   };
 
   const handleDeleteClick = (birdID, birdIndex) => {
