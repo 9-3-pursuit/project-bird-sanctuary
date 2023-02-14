@@ -1,5 +1,5 @@
 import {v1 as generateUniqueID} from "uuid";
-
+ 
 
 export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
 
@@ -11,12 +11,10 @@ export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscoun
             id: generateUniqueID()
         }])
         handleDiscount();
-
     }
 
-
     function handleDiscount() {
-        
+
         cartQueue.length + 1 >= 3 ? setDiscount(10) : setDiscount(0)
     }
 

@@ -3,7 +3,6 @@ import BonusItem from "./BonusItem";
 
 export default function Cart({ cartQueue, setCartQueue, discount, setDiscount}) {
     
-
     let totalAmount = cartQueue.reduce((total, cartItem) => {
         return total + cartItem.amount
     }, 0)
@@ -14,6 +13,7 @@ export default function Cart({ cartQueue, setCartQueue, discount, setDiscount}) 
         setCartQueue(updatedCart);
     }
 
+    
     if(discount === 10) {
         totalAmount *= .9
     }
