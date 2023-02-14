@@ -1,0 +1,23 @@
+img{
+    width: 150px;
+    height: 240px;
+    border: 2px solid black;
+}
+
+h1{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.birds.button {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+   
+    color: blue;
+
+}
+
+
