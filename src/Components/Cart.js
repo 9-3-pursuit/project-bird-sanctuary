@@ -7,7 +7,7 @@ function Cart({myCart, setMyCart}) {
             //Bonus Requirements
         let bonus = []; 
           amountTotal = tempArr.map((x) => x.birdAmount).reduce((a,b) => a + b, 0)  
-         if (amountTotal >= 100) {
+         if (amountTotal >= 100 && amountTotal <= 300) {
             bonus.push(bonusItems[0]);
          }
          if (amountTotal >= 300 &&  amountTotal <= 500) {
