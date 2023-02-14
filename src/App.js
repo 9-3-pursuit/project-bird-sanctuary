@@ -4,7 +4,6 @@ import { useState } from "react";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import BirdCard from "./Components/BirdCard"; // this will hold the state of cart
-//import bonusItems from "./Components/BonusItems";
 //import bonusItems from "../data/bonusItems";
 
   // const [bird, setBird] = useState('');

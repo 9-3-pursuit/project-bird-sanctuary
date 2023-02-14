@@ -1,4 +1,5 @@
-//import bonusItems from "../data/bonusItems"
+import bonusItems from "../data/bonusItems"
+
 function Cart({myCart, setMyCart}) {
     function deleteBirdFromCart(index) {
         let tempArr = myCart.adopted
@@ -13,21 +14,22 @@ function Cart({myCart, setMyCart}) {
 
             let updatedCart= {total: amountTotal, discount: qualifiedForDiscount, adopted: tempArr}
             setMyCart(updatedCart);
-        
-    // function QualifiedBonusItems() {
-    // if (amountTotal > 100 && amountTotal < 300) {
-    //     setMyCart(bonusItems[0])
-    // } 
-    // else if  (amountTotal >= 300 && amountTotal < 500) {
-    //     setMyCart(bonusItems[0], bonusItems[1])
-    // }
-    // else if (amountTotal >= 500 && amountTotal <= 1000) {
-    //     setMyCart(bonusItems[0], bonusItems[1], bonusItems[2])
-    // } else 
-    //     (amountTotal >= 1000); {
-    //         setMyCart(bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3])
-    //     }
-    // }
+     
+         //Bonus Requirements
+         let bonus = []; 
+          amountTotal = tempArr.map((x) => x.birdAmount).reduce((a,b) => a + b, 0)  
+         if (amountTotal >= 100) {
+            bonus.push(bonusItems[0]);
+         }
+         if (amountTotal >= 300 &&  amountTotal <= 500) {
+            bonus.push(bonusItems[0], bonusItems[1]);
+         }
+         if (amountTotal>= 500 && amountTotal <= 1000) {
+            bonus.push(bonusItems[0], bonusItems[1], bonusItems[2]);
+         }
+         if (amountTotal >= 1000) {
+            bonus.push(bonusItems[0], bonusItems[1], bonusItems[2],  bonusItems[3]);
+         }
 }
 
       
@@ -43,50 +45,10 @@ function Cart({myCart, setMyCart}) {
             <button className="delButton" onClick={() => deleteBirdFromCart(index)}>Delete</button>
             </li>))}
         </ol>
-        <p>Your donation has qualified for the following bonus:</p>
-        <ul>{myCart.amountTotal ? (<h3>Discount: 10%</h3>): (<h3>Discount: 0%</h3>)}</ul>
+        <p>Your donation has qualified for the following bonus items:</p>
+        <ul>{bonusItems.map(( b,index ) => { return <li key={index}>{b}</li>;})}</ul>
        </div>
     )
 }
 
 export default Cart;
-
-//<h3>Discount: {birdData.length >= 3 ? 10 : 0}%</h3>
-//<h4>Total: $ {birdData.length >= 3 ? amountTotal  * 0.9 : amountTotal}</h4>
-
-
-    //const [amountTotal, setAmountTotal] = useState('');
-    //const discountTotal =  amountTotal * 0.9;
-    // Make sure to change birdData to a state from BirdCard
-    
-    //const bird = [1,2];
-
-    // if (total > 100 && total < 300) {
-    //     bonusItems[0];
-    // } 
-    // else if  (total >= 300 && total < 500) {
-    //    bonusItems[0], bonusItems[1]
-    // }
-    // else if (total >= 500 && total <= 1000) {
-    //         bonusItems[0], bonusItems[1], bonusItems[2]
-    // } else {
-    //         (total > 1000) {
-    //             bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3]
-    //     }
-    // }
-
-
-    // function QualifiedBonusItems() {
-    // if (tempTotal > 100 && tempTotal < 300) {
-    //     setMyCart(bonusItems[0])
-    // } 
-    // else if  (tempTotal >= 300 && tempTotal < 500) {
-    //     setMyCart(bonusItems[0], bonusItems[1])
-    // }
-    // else if (tempTotal >= 500 && tempTotal <= 1000) {
-    //     setMyCart(bonusItems[0], bonusItems[1], bonusItems[2])
-    // } else 
-    //     (tempTotal >= 1000); {
-    //         setMyCart(bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3])
-    //     }
-    // }
