@@ -93,11 +93,35 @@ The bonuses come from `src/data/bonusItems.js`
 - Before you write any code, think about your component structure.
 
   - What components will you need to represent the parts of the app?
+    - Bird Cards 
+    - Cart 
+      - Bonus
+      - Checkout
+
+
   - Which components will need to have state?
+    - Cart
+      - Bonus
+      - Checkout
+
+
   - Which components will need to know about the state of **other components**?
+    - Cart will need to know data from Birds page about prices.
+      Checkout will need info from cart & bonus sections to calculate final price.
+
+
   - Which components will need to get props (data or callbacks) from another component?
+      - all of them ??
+
+
   - Which components will be rendered by other components?
   - Draw out your component structure. Check your drawing against the user stories. Will you be able to implement all of the stories with this structure?
+
+  - Bird Cards 
+  - Cart 
+      - Bonus
+      - Checkout
+
 
 - If your tests are failing, read the acceptance criteria closely. Some tests expect you to use specific text, classes, or HTML elements.
 
