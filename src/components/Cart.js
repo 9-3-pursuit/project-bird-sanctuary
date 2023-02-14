@@ -1,3 +1,5 @@
+import BonusItems from "./BonusItems"
+
 function Cart({cart, setMyCart}) {
  
     function removebird(index) {
@@ -10,10 +12,6 @@ function Cart({cart, setMyCart}) {
             temptotal = temptotal * 0.9
             tempdiscount = true
          }    
-         
-         
-         
-         
          
          let newcart= {total: temptotal, discount: tempdiscount, adopted: temparray}
           setMyCart(newcart)
@@ -43,7 +41,7 @@ function Cart({cart, setMyCart}) {
            }
         </ol>
         <p>Your donation has qualified for:</p>
-        <ul>  </ul>
+         <BonusItems cart={cart}/>
        </div>
     );
 }

@@ -125,7 +125,7 @@ describe("It adds bonus items as the total increases", () => {
   });
 
   it("Can add Boat Billed Heron to cart, with correct bonus items", () => {
-    addBoatBilledHeronToCart();
+    addManyBirdsToCart();
     cy.get(".Cart").within(() => {
       cy.get("li").contains("Boat Billed Heron");
       cy.get("li").contains("Stickers");

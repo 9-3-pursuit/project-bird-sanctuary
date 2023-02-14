@@ -1,5 +1,6 @@
 import birdData from "../data/birds.js";
 
+
  function BirdCards({cart, setMyCart}) {
  
  
@@ -12,6 +13,8 @@ import birdData from "../data/birds.js";
          let temptotal = arr.map((x) => x.birdamount).reduce((a,b)=> a+b,0)
          let myCart= {total: temptotal, adopted: arr }
          
+         //let totalprops = temptotal
+         
          if(myCart.adopted.length >= 3) {
         
           let totalDisc = (temptotal * 0.9)
@@ -19,10 +22,13 @@ import birdData from "../data/birds.js";
           let cart2 = {total: totalDisc , discount: true, adopted: adopted2}
           
           setMyCart(cart2)
+          //totalprops = totalDisc
          } 
          else {
-         setMyCart(myCart)}
-
+         setMyCart(myCart)
+        }
+        
+      
        } 
 
     return(
