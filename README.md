@@ -2,8 +2,7 @@
 
 # Bird Sanctuary
 
-Full Site Here ➡️ https://main--shimmering-klepon-243719.netlify.app/
-
+Full Site Here ➡️ https://the-bird-sanctuary-project.netlify.app/
 
 
 ## Getting Started
