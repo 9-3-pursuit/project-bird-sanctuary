@@ -1,21 +1,31 @@
 import "./Checkout.css";
 import { useState } from "react";
 
-export default function Checkout({ onSubmit }) {
-  const [form, setForm] = useState({
+export default function Checkout({ dispatch }) {
+  const INITIAL_STATE = {
     firstName: "",
     lastName: "",
     email: "",
     zipCode: 0,
-  });
+  };
+
+  const [form, setForm] = useState(INITIAL_STATE);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.id]: e.target.value });
   }
 
-  function handleAlert(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    alert("Oh no! Fill the form the complete your adoption.");
+    const NO_EMPTY_VALUES = Object.values(form).every((entry) => entry !== "");
+
+    if (NO_EMPTY_VALUES) {
+      alert("You have adopted birds. Thank you!");
+      dispatch({ type: "submitted" });
+      setForm(INITIAL_STATE);
+    } else {
+      alert("Oh no! Please fill out the form to complete your adoption.");
+    }
   }
 
   return (
@@ -24,17 +34,7 @@ export default function Checkout({ onSubmit }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (Object.values(form).every((entry) => entry !== "")) {
-            setForm({
-              firstName: "",
-              lastName: "",
-              email: "",
-              zipCode: "",
-            });
-            onSubmit(e);
-          } else {
-            handleAlert(e);
-          }
+          handleSubmit(e);
         }}
       >
         <label htmlFor="firstName">First Name</label>
