@@ -37,16 +37,16 @@ const Checkout = ({ resetCart }) => {
       <form onSubmit={handleSubmit}>
         <h3>Checkout</h3>
         <label htmlFor="firstName">First Name:</label>
-        <input type="text" id="firstName" onChange={handleTextChange} value={user.firstName} />
+        <input type="text" id="firstName" onChange={handleTextChange} value={user.firstName} placeholder="<firstName here.../>" />
 
         <label htmlFor="lastName">Last Name:</label>
-        <input type="text" id="lastName" onChange={handleTextChange} value={user.lastName} />
+        <input type="text" id="lastName" onChange={handleTextChange} value={user.lastName} placeholder="<lastName here.../>" />
 
         <label htmlFor="firstName">Email:</label>
-        <input type="text" id="email" onChange={handleTextChange} value={user.email} />
+        <input type="text" id="email" onChange={handleTextChange} value={user.email} placeholder="<email.../>" />
 
         <label htmlFor="firstName">Zip Code</label>
-        <input type="number" id="zip" onChange={handleTextChange} value={user.zip} />
+        <input type="number" id="zip" onChange={handleTextChange} value={user.zip} placeholder="<zipCode.../>" />
 
         <br />
 

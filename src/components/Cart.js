@@ -1,6 +1,6 @@
-import bonusItems from "../data/bonusItems";
 import "../styles/Cart.css";
-const Cart = ({ cart, total, discount, handleDeleteClick }) => {
+
+const Cart = ({ cart, total, discount, handleDeleteClick, bonusItemsList }) => {
   return (
     <div className="Cart">
       <div>
@@ -10,7 +10,7 @@ const Cart = ({ cart, total, discount, handleDeleteClick }) => {
         <p>Discount: {discount}%</p>
       </div>
       <div>
-        <h4>Total: ${total}</h4>
+        <h4>Total: ${cart.length >= 3 ? total * 0.9 : total}</h4>
       </div>
       <div>
         <ol>
@@ -18,6 +18,8 @@ const Cart = ({ cart, total, discount, handleDeleteClick }) => {
             return (
               <li key={index}>
                 {bird.name} - ${bird.amount}
+                <br />
+                <br />
                 <button onClick={() => handleDeleteClick(bird.id, index)}>Delete</button>
               </li>
             );
@@ -29,10 +31,9 @@ const Cart = ({ cart, total, discount, handleDeleteClick }) => {
       </div>
       <div>
         <ul>
-          {total >= 100 ? <li key={bonusItems[0]}>{bonusItems[0]}</li> : null}
-          {total >= 300 ? <li key={bonusItems[1]}>{bonusItems[1]}</li> : null}
-          {total >= 500 ? <li key={bonusItems[2]}>{bonusItems[2]}</li> : null}
-          {total >= 1000 ? <li key={bonusItems[3]}>{bonusItems[3]}</li> : null}
+          {bonusItemsList.map((bonusItem, index) => {
+            return <li key={index}>{bonusItem}</li>;
+          })}
         </ul>
       </div>
     </div>
