@@ -1,14 +1,8 @@
 import "./Cart.css";
 import bonusItems from "../data/bonusItems";
 
-export default function Cart({ list, total, setList, setTotal }) {
+export default function Cart({ list, total, handleClick }) {
   const discount = list.length >= 3 ? 0.1 : 0;
-
-  function handleClick(e, amount) {
-    let newList = list.filter(({ id }) => id !== e.target.parentNode.id);
-    setList(newList);
-    setTotal(total - amount);
-  }
 
   return (
     <section className={"Cart section border-black"}>

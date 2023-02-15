@@ -23,9 +23,15 @@ function App() {
     setTotal(total + amount);
   }
 
+  function handleRemoveFromCar(e, amount) {
+    let newList = list.filter(({ id }) => id !== e.target.parentNode.id);
+    setList(newList);
+    setTotal(total - amount);
+  }
+
   return (
     <main>
-      <Cart list={list} total={total} setList={setList} setTotal={setTotal} />
+      <Cart list={list} total={total} onClick={handleRemoveFromCar} />
       <Checkout onSubmit={handleSubmit} />
       <div className="bird-section">
         {birdData.map(({ name, img, amount, id }) => (
