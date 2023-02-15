@@ -17,14 +17,6 @@ function App() {
     dispatch({ type: "submitted" });
   }
 
-  function handleAddToCart(birdToAddToList) {
-    dispatch({
-      type: "added",
-      birdToAddToList: birdToAddToList,
-      amount: birdToAddToList.amount,
-    });
-  }
-
   function handleRemoveFromCart(e, amount) {
     const listWithItemFiltered = cart.list.filter(
       ({ id }) => id !== e.target.parentNode.id
