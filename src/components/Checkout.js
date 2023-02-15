@@ -1,4 +1,4 @@
-function Checkout({cart, setMyCart}) {
+function Checkout({birbCart, setMyCart}) {
   
 
 

@@ -9,14 +9,14 @@ function BirdCard({cart4Bird, setMyCart}){
       let arr = cart4Bird.adopted
       let theAdoptedBird = {birdname: bird.name,  birdamount: bird.amount}
       arr.push(theAdoptedBird)
-      let temptotal = arr.map((x) => x.birdamount).reduce((a,b)=> a+b,0)
-      let myCart= {total: temptotal, adopted: arr }
+      let tempBirbTotal = arr.map((birb) => birb.birdamount).reduce((a,b)=> a+b,0)
+      let myCart= {total: tempBirbTotal, adopted: arr }
       
       if(myCart.adopted.length >= 3) {
      
-       let totalDisc = (temptotal * 0.9)
+       let totalDiscAmount = (tempBirbTotal * 0.9)
        let adoptedBirds = myCart.adopted
-       let cart2 = {total: totalDisc , discount: true, adopted: adoptedBirds}
+       let cart2 = {total: totalDiscAmount , discount: true, adopted: adoptedBirds}
        
        setMyCart(cart2)
       } 
