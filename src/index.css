@@ -1,0 +1,4 @@
+.color-change-5x {
+    -webkit-animation: color-change-5x 8s linear infinite alternate both;
+    animation: color-change-5x 8s linear infinite alternate both;
+}
