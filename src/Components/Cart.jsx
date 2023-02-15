@@ -1,24 +1,20 @@
 import "./Cart.css";
 import bonusItems from "../data/bonusItems";
+import CartItem from "./CartItem";
 
 export default function Cart({ onClick, cart: { total, list } }) {
-  const discount = list.length >= 3 ? 0.1 : 0;
+  const DISCOUNT = list.length >= 3 ? 0.1 : 0;
+  const DISCOUNTED_TOTAL = total - total * DISCOUNT;
 
   return (
     <section className={"Cart section border-black"}>
       <h3>Cart</h3>
-      <h5>Discount: {discount * 100}%</h5>
-      <h4>Total: ${total - total * discount} </h4>
+      <h5>Discount: {DISCOUNT * 100}%</h5>
+      <h4>Total: ${DISCOUNTED_TOTAL} </h4>
       <ol>
-        {list.map(({ name, amount, id }) => (
-          <li key={id} id={id}>
-            {" "}
-            {name}: ${amount}
-            <button className="Cart-button" onClick={(e) => onClick(e, amount)}>
-              Delete
-            </button>
-          </li>
-        ))}
+        {list.map((cartItemInfo) => {
+          return <CartItem item={cartItemInfo} onClick={onClick} />;
+        })}
       </ol>
       <h6>Your donation has qualified you for the following bonuses:</h6>
       <ul>
