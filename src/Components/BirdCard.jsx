@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function BirdCard({
   bird: { name, img, amount, id },
   dispatch,
+  currentMode,
 }) {
   function handleAddToCart(birdToAddToList) {
     dispatch({
@@ -14,7 +15,7 @@ export default function BirdCard({
   }
 
   return (
-    <div key={id} className="card birds border-black">
+    <div key={id} className={`card birds border-black ${currentMode}`}>
       <h5>{name}</h5>
       <p>Price: ${amount}</p>
       <img src={img} alt={name} />

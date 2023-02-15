@@ -1,7 +1,7 @@
 import "./Checkout.css";
 import { useState } from "react";
 
-export default function Checkout({ dispatch }) {
+export default function Checkout({ dispatch, currentMode }) {
   const INITIAL_STATE = {
     firstName: "",
     lastName: "",
@@ -29,7 +29,7 @@ export default function Checkout({ dispatch }) {
   }
 
   return (
-    <section className={"Checkout section border-black"}>
+    <section className={`Checkout section border-black ${currentMode}`}>
       <h4>Checkout</h4>
       <form
         onSubmit={(e) => {

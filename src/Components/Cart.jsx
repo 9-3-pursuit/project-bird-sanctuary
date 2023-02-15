@@ -2,7 +2,7 @@ import "./Cart.css";
 import bonusItems from "../data/bonusItems";
 import CartItem from "./CartItem";
 
-export default function Cart({ dispatch, cart: { total, list } }) {
+export default function Cart({ dispatch, cart: { total, list }, currentMode }) {
   const DISCOUNT = list.length >= 3 ? 0.1 : 0;
   const DISCOUNTED_TOTAL = total - total * DISCOUNT;
 
@@ -18,7 +18,7 @@ export default function Cart({ dispatch, cart: { total, list } }) {
   }
 
   return (
-    <section className={"Cart section border-black"}>
+    <section className={`Cart section border-black ${currentMode}`}>
       <h3>Cart</h3>
       <h5>Discount: {DISCOUNT * 100}%</h5>
       <h4>Total: ${DISCOUNTED_TOTAL} </h4>
