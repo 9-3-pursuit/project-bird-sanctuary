@@ -1,0 +1,53 @@
+.card {
+  width:70%;
+} 
+.card img {
+  width: 200px;
+  max-height: 300px;
+  margin: auto;
+  
+}
+body{
+  background: linear-gradient(90deg, rgba(17,0,36,0) 0%, rgba(9,121,117,1) 100%, rgba(0,255,203,1) 100%);
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px;
+}
+   .card li{
+    /* width: 48%; */
+    min-height: 360px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* display: flex;
+    flex-direction: column;
+    flex-direction: row; */
+    justify-content: space-between;
+    background-color: #ffffff;
+    background: linear-gradient(90deg, rgba(17,0,36,0) 0%, rgba(10,121,9,1) 100%, rgba(0,255,203,1) 100%);
+  } 
+form{
+  border-style: solid;
+  width:400px;
+  margin-top: 60px;
+  display:block;
+}
+.Cart{
+  border-style: solid;
+  width:400px;
+  display:block;
+  margin:none;
+}
+ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  row-gap: 20px;
+}
+.Ckeckout{
+  display: block;
+}
