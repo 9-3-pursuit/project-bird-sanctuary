@@ -1,0 +1,8 @@
+.app {
+    background-color: rgb(223, 248, 255);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+

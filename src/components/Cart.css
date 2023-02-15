@@ -1,0 +1,33 @@
+.sidebars {
+    width: 300px;
+    margin: auto;
+}
+
+ol li {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.Cart ul {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.Cart {
+    border: 3px solid rgb(232, 243, 251);
+    border-radius: 2px;
+    width: 300px;
+    height: 500px;
+    padding: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.Cart button, .Cart li {
+    display: inline-block;
+}
+
+.Cart button {
+    width: 70px;
+    margin-left: 10px;
+    padding: 0;
+}
