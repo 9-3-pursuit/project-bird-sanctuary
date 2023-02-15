@@ -16,7 +16,7 @@ function App() {
   const currentMode = isDark ? "dark" : "light";
 
   return (
-    <main>
+    <main className={currentMode}>
       <header>
         <h1>Ari's Bird Sanctuary</h1>
         <label class="switch">
