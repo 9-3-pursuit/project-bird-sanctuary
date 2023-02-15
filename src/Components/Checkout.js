@@ -7,7 +7,6 @@ export default function Checkout() {
     const [zipCode, setZipCode] = useState({})
     const [submit, setSubmit] = useState({})
 
-
     function handleFirstNameChange(event) {
         setFirstName(event.target.value)
     }
@@ -24,6 +23,7 @@ export default function Checkout() {
         event.preventDefault();
         setSubmit(event.target.value)
         alert("You have adopted birds. Thank you!")
+
     }
     return (
         <div>

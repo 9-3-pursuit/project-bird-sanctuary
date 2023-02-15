@@ -7,9 +7,9 @@ export default function AllBirds({ birdData, setBirdCart, birdCart }) {
     const birds = birdData.map((element) => {
 
         return (
-            <div className="card">
+            <div key={birdCart.id} className="card">
                 <h5>{element.name}</h5>
-                <h6>Total: ${element.amount}</h6>
+                <h6>Price: ${element.amount}</h6>
                 <img alt="bird.name" src={element.img} />
                 <button onClick={() => handleClick(element)} type="submit" text="Adopt">Adopt</button>
             </div>)

@@ -9,10 +9,15 @@ import bonusItems from "./data/bonusItems"
 // import ".App.css";
 
 function App() {
-  const [total, setTotal] = useState(0);
   const [birdCart, setBirdCart] = useState([]);
-  const [discount, setDiscount] = useState(0);
+  const [discount, setDiscount] = useState(false);
   const [bonusItems, setBonusItems] = useState({})
+
+  //addToCart excepts a birdobj and uses setCart to update the cart
+  // function addToCart(birdToAdd) {
+  //   setBirdCart([...birdCart, birdToAdd])
+  // }
+
   return (
     <div>
       <AllBirds birdData={birdData} setBirdCart={setBirdCart} birdCart={birdCart} />;
