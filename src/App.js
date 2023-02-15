@@ -25,10 +25,16 @@ const App = () => {
 
   return (
     <div>
-      <Checkout handleClearCart={handleClearCart} />
-      <Cart setCart={handleAddToCart} cart={cart} handleDelete={handleDelete} />
-
-      <BirdCard data={data} setCart={handleAddToCart} />
+      <main className='card_container'>
+        <header className='header_container'>
+          <h1 className='title'>Bird Sanctuary</h1>
+          </header>
+        <div>
+          <Checkout handleClearCart={handleClearCart} />
+          <Cart setCart={handleAddToCart} cart={cart} handleDelete={handleDelete} />
+        </div>
+        <BirdCard data={data} setCart={handleAddToCart} />
+      </main>
     </div>
   );
 };

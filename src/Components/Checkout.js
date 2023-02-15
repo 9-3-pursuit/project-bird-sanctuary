@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Checkout.css";
 
 const Checkout = ({ handleClearCart }) => {
   const [firstName, setFirstName] = useState("");
@@ -19,7 +20,7 @@ const Checkout = ({ handleClearCart }) => {
   return (
     <div className="Checkout">
       <form onSubmit={handleSubmit}>
-        <h1>Checkout</h1>
+        <h1 className="checkout1">Checkout</h1>
         <br />
         <label for="firstName">First Name</label>
         <input

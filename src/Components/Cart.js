@@ -23,11 +23,12 @@ const Cart = ({ cart, handleDelete}) => {
 
   return (
     <div className="Cart">
+      <h1 className='Cart1'>Cart</h1>
       <ol>
         {cart.map((bird) => (
           <li key={bird.id}>
             {bird.name} ${bird.amount}
-            <button onClick={() => handleDelete(bird.id)}>x</button>
+              <button className="delete_button" onClick={() => handleDelete(bird.id)}>x</button>
           </li>
         ))}
       </ol>
