@@ -56,7 +56,7 @@ section {
 
 .bird-section {
   height: 100%;
-  grid-row: 2 4;
+  grid-row: 2 / 4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -66,4 +66,29 @@ section {
 /* Utility Classes */
 .border-black {
   border: black solid 1px;
+}
+
+.light {
+  background-color: white;
+  color: #333;
+}
+
+main.dark {
+  background-color: rgb(84, 85, 90);
+}
+
+.dark {
+  background-color: #808080;
+  color: whitesmoke;
+}
+
+.dark button,
+.dark input[type="submit"] {
+  color: whitesmoke;
+}
+
+.dark button:hover,
+.dark input[type="submit"]:hover {
+  box-shadow: 0 0 1em rgba(255, 255, 255, 0.3);
+  background-color: rgb(82, 82, 82);
 }
