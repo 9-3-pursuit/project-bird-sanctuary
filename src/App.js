@@ -8,6 +8,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  console.log();
   const [list, setList] = useState([]);
   const [total, setTotal] = useState(0);
 
