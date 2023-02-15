@@ -1,8 +1,11 @@
+
 form {
     border: 1px solid black;
     width: 300px;
     height: 400px;
     padding-top:10px;
+    border: 3px solid rgb(232, 243, 251);
+    border-radius: 2px;background-color: rgb(255, 255, 255);
 }
 
 label, p  {
@@ -16,5 +19,6 @@ input {
 button {
     margin-left: 90px;
     margin-top: 5px;
-    background-color: rgb(209, 241, 250);
+    background-color: rgb(255, 255, 255);
 }
+

@@ -2,29 +2,47 @@ import birdData from "./data/birds";
 import Cards from "./components/Cards";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
+import "./App.css"
+
 import { useState } from "react";
 
 function App () {
   const [total, setTotal] = useState(0);
   const [birdsList, setBirdsList] = useState(birdData);
- 
-  function handleBirdAdopted(birdIndex){
-    birdsList[birdIndex].adopted = true;
-    setBirdsList([...birdsList]); // treat arrays in state as inmutable (use spread operator)
+  const [discount, setDiscount] = useState(0)
+  const [adoptedBirdsList, setAdoptedBirdsList] = useState([]);
+  
+
+  function handleBirdAdopted(birdIndex){ 
    
+    adoptedBirdsList.push(birdsList[birdIndex])
+    setAdoptedBirdsList([...adoptedBirdsList]) 
+
    let newTotal = 0;
-   birdsList.forEach((bird)=>{
-    if (bird.adopted === true){
+   adoptedBirdsList.forEach((bird)=>{
       newTotal+=bird.amount;
-    }
    })
-   setTotal(newTotal)
+
+   if(adoptedBirdsList.length >= 3){
+   newTotal *= 0.9;
+    setDiscount(10);
+   }
+   
+   setTotal(newTotal);
   }
- 
+
+  function handleBirdDelete(index){
+   adoptedBirdsList.splice(index, 1)
+   setAdoptedBirdsList([...adoptedBirdsList])
+  }
+  
+
   return (
     <div className="app">
-      <Cart total={total} birdsList={birdsList}/>
+      <div className="sidebars">
+      <Cart discount={discount} total={total}  birdsList={adoptedBirdsList} onBirdDelete={handleBirdDelete}/>
       <Checkout/>
+      </div>
       <Cards birds={birdsList} onBirdAdopted={handleBirdAdopted}/>
     </div>
   );

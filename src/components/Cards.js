@@ -2,19 +2,20 @@ import "./Cards.css"
 import Card from "./Card"
 
 
-function Cards({ birds, onBirdAdopted }) {
+function Cards({ birds, onBirdAdopted, createList}) {
 
     function handleClick(birdId) {
         const birdIndex = birds.findIndex((bird) => {
-            return bird.id === birdId;    //e.target.id always comes as a string
+            return bird.id === birdId;    
         })
         onBirdAdopted(birdIndex)
+        console.log(birdIndex)
     }
 
     return (
-        <ul>
+        <ul className="birds">
             {birds.map((bird) => (
-                <Card key={bird.id} bird={bird} handleClick={handleClick} /> //           
+                <Card key={bird.id} bird={bird} handleClick={handleClick}/> //           
             ))
             }
         </ul>
