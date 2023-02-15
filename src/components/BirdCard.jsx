@@ -1,5 +1,4 @@
 import React from "react";
-// import { userState } from 'react';
 
 export default function BirdCard({bird, handleBirdCardClick}) {
     return(

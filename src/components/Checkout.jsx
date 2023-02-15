@@ -1,9 +1,9 @@
-// import userEvent from "@testing-library/user-event";
 import React from "react";
 
 export default function checkout ({user, handleTextChange, handleSubmit}) {
     return (
         <div className="Checkout">
+            <header><strong>Checkout</strong></header>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="firstName">First Name : </label>
                 <input type="text"

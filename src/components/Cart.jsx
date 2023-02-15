@@ -14,8 +14,9 @@ export default function Cart({cart, handleDelete }){
             <h3>Discount: {cart.length < 3 ? 0 : 10}%</h3>
             <h4>Total: ${total}</h4>
 
-            <ol>
+            <ul>
                 {cart.map((bird, i) => {
+                    console.log(bird.id, i)
                     return(
                         <li key ={`${bird.id}-${i}`}>
                             {bird.name}: ${bird.amount}
@@ -24,7 +25,7 @@ export default function Cart({cart, handleDelete }){
 
                     )
                 })}
-            </ol>
+            </ul>
 
             <p>Your donations has qualified you for the following items.</p>
             <ul>
