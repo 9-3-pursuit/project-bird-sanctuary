@@ -1,0 +1,26 @@
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px 50px 0 50px;
+}
+
+.card {
+    max-width: 250px;
+    max-height: 350px;
+    background-color: skyblue;
+    text-align: center;
+    border: 5px solid beige;
+    border-radius: 5px;
+    list-style: none;
+}
+
+button {
+    color: black;
+    border-color: black;
+    background-color: beige;
+}
+
+img {
+    max-height: 150px;
+    max-width: 150px;
+}
