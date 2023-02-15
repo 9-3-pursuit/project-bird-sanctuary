@@ -8,31 +8,40 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  console.log();
-  const [list, setList] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState({
+    list: [],
+    total: 0,
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
     alert("You have adopted birds. Thank you!");
-    setList([]);
-    setTotal(0);
+    setCart({
+      list: [],
+      total: 0,
+    });
   }
 
   function handleAddToCart({ name, amount, id }) {
-    setList([...list, { name, amount, id }]);
-    setTotal(total + amount);
+    const { total, list } = cart;
+    setCart({
+      list: [...list, { name, amount, id }],
+      total: total + amount,
+    });
   }
 
-  function handleRemoveFromCar(e, amount) {
+  function handleRemoveFromCart(e, amount) {
+    const { total, list } = cart;
     let newList = list.filter(({ id }) => id !== e.target.parentNode.id);
-    setList(newList);
-    setTotal(total - amount);
+    setCart({
+      list: newList,
+      total: total - amount,
+    });
   }
 
   return (
     <main>
-      <Cart list={list} total={total} onClick={handleRemoveFromCar} />
+      <Cart cart={cart} onClick={handleRemoveFromCart} />
       <Checkout onSubmit={handleSubmit} />
       <div className="bird-section">
         {birdData.map(({ name, img, amount, id }) => (

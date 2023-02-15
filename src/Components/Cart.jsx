@@ -1,7 +1,7 @@
 import "./Cart.css";
 import bonusItems from "../data/bonusItems";
 
-export default function Cart({ list, total, handleClick }) {
+export default function Cart({ onClick, cart: { total, list } }) {
   const discount = list.length >= 3 ? 0.1 : 0;
 
   return (
@@ -14,10 +14,7 @@ export default function Cart({ list, total, handleClick }) {
           <li key={id} id={id}>
             {" "}
             {name}: ${amount}
-            <button
-              className="Cart-button"
-              onClick={(e) => handleClick(e, amount)}
-            >
+            <button className="Cart-button" onClick={(e) => onClick(e, amount)}>
               Delete
             </button>
           </li>
