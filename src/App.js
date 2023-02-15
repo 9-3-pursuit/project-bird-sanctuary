@@ -8,6 +8,7 @@ function App () {
   const [discount, setDiscount] = useState(0);
   const [cartQueue, setCartQueue] = useState([]) 
   
+
   return (
     <main>
       <aside>

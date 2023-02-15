@@ -1,4 +1,6 @@
 import {v1 as generateUniqueID} from "uuid";
+import { useEffect } from "react";
+
  
 
 export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
@@ -10,13 +12,12 @@ export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscoun
             amount: bird.amount,
             id: generateUniqueID()
         }])
-        handleDiscount();
     }
 
-    function handleDiscount() {
+    useEffect(() => {
+        cartQueue.length >= 3 ? setDiscount(10) : setDiscount(0)
+    }, [cartQueue, setCartQueue, setDiscount])
 
-        cartQueue.length + 1 >= 3 ? setDiscount(10) : setDiscount(0)
-    }
 
     return(
         <div className="card">
