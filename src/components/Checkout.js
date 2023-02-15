@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/Checkout.css";
 
 const Checkout = ({ resetCart }) => {
   const [user, setUser] = useState({
@@ -49,7 +50,7 @@ const Checkout = ({ resetCart }) => {
 
         <br />
 
-        <input type="submit" />
+        <input id="submit-button" type="submit" />
       </form>
     </div>
   );

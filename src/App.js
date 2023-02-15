@@ -1,5 +1,6 @@
 import birdData from "./data/birds";
 
+import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import BirdCard from "./components/BirdCard";
 import Checkout from "./components/Checkout";
@@ -46,16 +47,19 @@ const App = () => {
   };
 
   return (
-    <div className="main-container">
-      <div className="side-bar">
-        <Cart cart={cart} total={total} discount={discount} handleDeleteClick={handleDeleteClick} />
-        <br />
-        <Checkout resetCart={resetCart} />
-      </div>
-      <div className="birds">
-        {birdData.map((bird) => {
-          return <BirdCard bird={bird} handleAdoptClick={handleAdoptClick} />;
-        })}
+    <div className="priority-container">
+      <NavBar />
+      <div className="main-container">
+        <div className="side-bar">
+          <Cart cart={cart} total={total} discount={discount} handleDeleteClick={handleDeleteClick} />
+          <br />
+          <Checkout resetCart={resetCart} />
+        </div>
+        <div className="birds">
+          {birdData.map((bird) => {
+            return <BirdCard bird={bird} handleAdoptClick={handleAdoptClick} />;
+          })}
+        </div>
       </div>
     </div>
   );
