@@ -15,7 +15,7 @@ function Checkout({ setCartItems }) {
             <input type="text" name="First Name" />
           </div>
           <div>
-            <label htmlFor="Last Name">Lastname</label>
+            <label htmlFor="Last Name">Last Name</label>
             <input type="text" name="Last Name" />
           </div>
           <div>
@@ -23,7 +23,7 @@ function Checkout({ setCartItems }) {
             <input type="email" name="Email" />
           </div>
           <div>
-            <label>Code</label>
+            <label className="Zip Code">Zip Code</label>
             <input type="number" />
           </div>
           <input type="submit" value="SUBMIT" />

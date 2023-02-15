@@ -1,6 +1,6 @@
 import bonusItems from "../data/bonusItems";
 
-function Cart({ cartItems }) {
+function Cart({ cartItems, setcartItems }) {
   const discountEligible = cartItems.length >= 3;
   let totalPrice = cartItems.reduce((a, b) => {
     return (a += b.amount);
@@ -17,6 +17,11 @@ function Cart({ cartItems }) {
     else if (totalPrice >= 1000) return bonusItems.slice(0, 4);
     return [];
   };
+
+  function deleteCartItem(itemId) {
+    (cartItems.filter((e, idx) => itemId !== idx));
+  }
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
@@ -24,10 +29,11 @@ function Cart({ cartItems }) {
       <h4>Total: {`$${totalPrice}`}</h4>
       <ol>
         <h5>Cart Items</h5>
-        {cartItems.map((item) => {
+        {cartItems.map((item, idx) => {
           return (
             <li key={item.id}>
               {item.name} ${item.amount}
+              <button onClick={() => deleteCartItem(idx)}>DEL</button>
             </li>
           );
         })}

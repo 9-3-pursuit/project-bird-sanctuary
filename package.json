@@ -21,6 +21,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
+      ,"plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "cypress": "^9.7.0",
-    "cypress-watch-and-reload": "^1.10.3"
+    "cypress-watch-and-reload": "^1.10.3",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
