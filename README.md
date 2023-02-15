@@ -106,7 +106,7 @@ The bonuses come from `src/data/bonusItems.js`
 This project is to help you assess your progress in learning React.
 
 - Do this project **on your own**.
-  - Do not pair programwith other fellows or submit one project for more than one person .
+  - Do not pair program with other fellows or submit one project for more than one person .
   - Do not refer to work from other (current or former) fellows.
   - Do not ask individuals outside the program for help.
 - You can refer to any notes that you have.
@@ -116,3 +116,6 @@ This project is to help you assess your progress in learning React.
 - Your instructors are here to help you with technical difficulties.
   - Make sure that the tests are running on your computer. If not, tell an instructor ASAP.
   - Make sure that you can fork and clone the repo and run the app. If not, tell an instructor ASAP.
+
+
+Here is the link for my app [Click here](https://bird-santuary-diandre.netlify.app/) to view my portfolio project.
