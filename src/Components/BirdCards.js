@@ -1,21 +1,16 @@
-export default function BirdCards({ birds }) {
+import BirdCard from "./BirdCard"
+
+export default function BirdCards({ birds, setCartItems, addToCart }) {
+
+
     return (
         <>
-            <div className="bird_cards">
+            <div className="birds">
                 <ul>
                     {birds.map((bird) => {
                         return (
                             <>
-                                <li className="card" key={bird.id}>
-                                    <img src={bird.img} alt={bird.name} />
-                                    <h5>
-                                        {bird.name}
-                                    </h5>
-                                    <br />
-                                    <h5>
-                                        ${bird.amount}
-                                    </h5>
-                                </li>
+                                <BirdCard addToCart={addToCart} setCartItems={setCartItems} bird={bird} />
                             </>
                         )
                     })}
