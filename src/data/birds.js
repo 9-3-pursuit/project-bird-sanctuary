@@ -20,7 +20,7 @@ const birdData = [
   {
     img: "https://i.redditmedia.com/sl3adn3eXY65Y4yNLxMRO_O4y-Pf1EYCxPuHpV34WqI.jpg?fit=crop&crop=faces%2Centropy&arh=2&w=640&s=f461fa6cd525892f85eb89268550867a",
     name: "Boat Billed Heron",
-    amount: 600,
+    amount: 700,
     id: 1333,
   },
   {
