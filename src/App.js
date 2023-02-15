@@ -5,7 +5,7 @@ import Checkout from "./Components/Checkout";
 /*         Data, State, CSS        */
 import birdData from "./data/birds";
 // import ModeContext from "./data/modeContext";
-import { useReducer, useContext, useState } from "react";
+import { useReducer, useState } from "react";
 import { cartReducer, INITIAL_STATE } from "./data/cartReducer";
 import "./App.css";
 
@@ -13,13 +13,23 @@ function App() {
   const [cart, dispatch] = useReducer(cartReducer, INITIAL_STATE);
   const [isDark, setDark] = useState(false);
 
+  const currentMode = isDark ? "dark" : "light";
+
   return (
     <main>
-      <Cart cart={cart} dispatch={dispatch} />
-      <Checkout dispatch={dispatch} />
+      <header>
+        <h1>Ari's Bird Sanctuary</h1>
+      </header>
+      <Cart cart={cart} dispatch={dispatch} isDark currentMode={currentMode} />
+      <Checkout dispatch={dispatch} currentMode={currentMode} />
       <div className="bird-section">
         {birdData.map((bird) => (
-          <BirdCard key={bird.id} bird={bird} dispatch={dispatch} />
+          <BirdCard
+            key={bird.id}
+            bird={bird}
+            dispatch={dispatch}
+            currentMode={currentMode}
+          />
         ))}
       </div>
     </main>
