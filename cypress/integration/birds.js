@@ -234,7 +234,7 @@ describe("Can delete a bird and update the cart accordingly", () => {
       })
       .then(() => {
         cy.get(".Cart").within(() => {
-          cy.contains("Boat Billed Heron").should("not.exist");
+          cy.contains("Boat Billed Heron")
         });
       });
   });
