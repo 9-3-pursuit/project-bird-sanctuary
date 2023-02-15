@@ -28,9 +28,21 @@
     top: 50px;
     left: 50px;
     padding: 50px;
-    border: 2px solid black;
-    min-height: 400px;
+    min-height: 300px;
     min-width: 250px;
     align-content: initial;
-    text-align: start;
+    text-align: center;
+    border: 2px solid darkgray;
+    
+}
+.checkoutForm {
+    position: absolute;
+    top: 800px;
+    left: 100px;
+    padding: 50px;
+    min-height: 300px;
+    min-width: 250px;
+    align-content: initial;
+    text-align: center;
+    border: 2px solid darkgray;
 }

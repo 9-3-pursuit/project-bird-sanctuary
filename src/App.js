@@ -1,85 +1,81 @@
-// import React from "react";
-import  birdData  from "./data/birds";
-// import BirdCards from "./Components/Birds";
+import React from "react";
+import  birdData  from "./data/birds.js"
+import Birds from "./Components/Birds";
 import { useState } from "react";
-import "./App.css"
-import Checkout from "./Components/Checkout";
-import Cart from "./Components/Cart";
+import "./App.css";
+import Checkout from "./Components/Checkout.js";
+import Cart from "./Components/Cart.js";
 
-function App () {
-  const [birdsArray, getBirds]= useState(birdData);
-
- 
- 
-  function CreateBirdCards(){
-    const birdCards = birdsArray.map((bird) => (
-      <div className="birds" >
-       <ul id="grid">
-          <li key={bird.id} className="card">
-          <h4>{bird.name}</h4>
-          <p>Total ${bird.amount}</p>
-          <img
-          src={bird.img}
-          width="200"
-          height="200"
-          alt="bird"
-          ></img>
-          <br></br>
-          <button onClick={HandleClickAdopt}>Adopt</button>
-          </li>
-        </ul>
-
-     </div>
-    ));
-    return birdCards
-    
-  }
-  function HandleClickAdopt(event) {
-   
-   const addBird = {[event.target.id]: event.target.value,}
-    console.log(addBird)
-  //  getBirds({birdsArray, addBird});
-   
-  }
-         
-            
-          
-  function addBirdToCart() {
-    
-    console.log(addBirdToCart)
-  }
- 
+function App() {
+  const [birdsToAdopt, addToCart] = useState(birdData);
   
-
+  function addBird () {
+    const addThisBird = birdsToAdopt.map((bird) => (
+     <>
+      <li>{bird.name} ${bird.amount} </li>
+     </> 
+    ))
+      return addThisBird
+      
+  }
+  let handleClick = () => (
+    addToCart(addBird)
+  )
   
+  
+  // const [birdsArray, getBirds] = useState(birdData);
+ 
+ 
+    // const [addBird, birdToCart] = useState(birdCards)
     
-  return (
-    <div>
-      <header className="header">
+        //  getBirds({birdsArray, addBird});
+        
+        
+        
+    // console.log(birdCards.length)
+    // function handleClickAdopt() {
+    //     const addBird = "I'm the click adopt handler"
+    //     console.log(addBird);
+    //     // handleClickAdopt(addBird)
+    // }
+    // return(
+    //     <div className="birds">
+    //     <CreateBirdCards cards={birdCards}  onClick={handleClickAdopt}/>
+    //   </div>
+    // )
+  // function HandleClickAdopt(event) {
+  //   const addBird = { [event.target.id]: event.target.value };
+  //   console.log(addBird);
+  //   //  getBirds({birdsArray, addBird});
+  // }
+
+  // function addBirdToCart() {
+  //   console.log(addBirdToCart);
+  // }
+
+
+
+return (
+  <div>
+    <header className="header">
       <h1>Bird Sanctuary</h1>
-      </header>
-      <main>
-       <div className="birds">
-         <CreateBirdCards />
-          
-       </div>
+    </header>
+    <main>
+      <div className="birds">
+        <Birds birdsArray={birdData} addBird={handleClick}/>
+      </div>
       <div className="cart">
         <aside>
-          <Cart/>
+          <Cart birdInfo={addToCart} />
         </aside>
       </div>
-      <div className="checkout">
+      <div className="Checkout">
         <aside>
           <Checkout />
         </aside>
       </div>
-      </main>
-    </div>
-  );
+    </main>
+  </div>
+)
 };
-
-
-
-      
-
 export default App;
