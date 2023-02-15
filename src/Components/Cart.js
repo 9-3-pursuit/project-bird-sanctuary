@@ -1,5 +1,5 @@
 import {v1 as generateUniqueID} from "uuid";
-import BonusItem from "./BonusItem";
+import bonusItems from "../data/bonusItems";
 
 function Cart({ cartQueue, setCartQueue, discount, setDiscount}) {
 
@@ -21,6 +21,21 @@ function Cart({ cartQueue, setCartQueue, discount, setDiscount}) {
     if(discount === 10) {
         finalPrice *= .9
     }
+
+    let bonusArray = [];
+    if (finalPrice >= 100) {
+        bonusArray.push(bonusItems[0]);
+     }
+     if (finalPrice >= 300) {
+        bonusArray.push(bonusItems[1]);
+     }
+     if (finalPrice>= 500) {
+        bonusArray.push(bonusItems[2]);
+     }
+     if (finalPrice >= 1000) {
+        bonusArray.push(bonusItems[3]);
+     }
+
 
     return(
         <div className="Cart">
@@ -45,9 +60,7 @@ function Cart({ cartQueue, setCartQueue, discount, setDiscount}) {
             {finalPrice >= 100 && (
                 <p>Your donations have qualified you for the following items:</p>
             )}
-            <ul>
-                <BonusItem finalPrice={finalPrice} />
-            </ul>
+            <ul>{bonusArray.map(( b ) => { return <li >{b}</li>;})}</ul>
             </div>
         </div>
     )

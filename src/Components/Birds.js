@@ -11,7 +11,6 @@ function Birds({ birdData, cartQueue, setCartQueue, setDiscount }) {
             id: generateUniqueID()
         }])
         handleDiscount();
-
     }
 
 

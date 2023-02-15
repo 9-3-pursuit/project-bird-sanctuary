@@ -1,4 +1,3 @@
-
 function Checkout({ setCartQueue, setDiscount }) {
 
     function handleSubmit(event) {
