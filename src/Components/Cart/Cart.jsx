@@ -1,5 +1,5 @@
 import "./Cart.css";
-import bonusItems from "../data/bonusItems";
+import bonusItems from "../../data/bonusItems";
 import CartItem from "./CartItem";
 
 export default function Cart({ dispatch, cart: { total, list }, currentMode }) {

@@ -1,7 +1,8 @@
 /*           Components           */
-import BirdCard from "./Components/BirdCard";
-import Cart from "./Components/Cart";
-import Checkout from "./Components/Checkout";
+import BirdCard from "./Components/BirdCard/BirdCard";
+import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
+import Header from "./Components/Header/Header";
 /*         Data, State, CSS        */
 import birdData from "./data/birds";
 // import ModeContext from "./data/modeContext";
@@ -17,17 +18,7 @@ function App() {
 
   return (
     <main className={currentMode}>
-      <header>
-        <h1>Ari's Bird Sanctuary</h1>
-        <label class="switch">
-          <input
-            type="checkbox"
-            className="default-checkbox"
-            onClick={(e) => setDark(e.target.checked)}
-          />
-          <span class="slider"></span>
-        </label>
-      </header>
+      <Header>
       <Cart cart={cart} dispatch={dispatch} isDark currentMode={currentMode} />
       <Checkout dispatch={dispatch} currentMode={currentMode} />
       <div className="bird-section">
