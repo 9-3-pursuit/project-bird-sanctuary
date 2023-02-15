@@ -12,7 +12,7 @@ export default function Checkout({ cart, setCart }) {
     // * first name,last name, email, zipcode
     // * alert when order is complete, 
     
-    // ! only part working besides the functionailty for the submit form is alert
+    // ! only part working besides the functionailty for the submit form is alert message
     function handleSubmit(event) { 
         event.preventDefault();
         alert("You have adopted birds. Thank you!")
