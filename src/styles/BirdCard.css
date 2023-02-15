@@ -1,0 +1,20 @@
+.birdCard {
+  padding: 2em;
+  /* height: 25em; */
+  /* width: 20em; */
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  background-color: #385170;
+  text-align: center;
+}
+
+.birdCard img {
+  width: 60%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 1em;
+}
+
+.birdCard button {
+  color: #cccc;
+}
