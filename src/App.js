@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Birdcards from './Components/Birdcards';
+import BirdCards from './Components/BirdCards';
 import birdData from './data/birds';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
+import bonusItems from './data/bonusItems';
 
 class App extends React.Component {
   constructor() {
@@ -24,7 +25,7 @@ class App extends React.Component {
       <>
         {birdData.map((bird) => {
           return (
-            <Birdcards
+            <BirdCards
               handleCartListener={this.handleCartListener}
               bird={bird}
               className="birds"

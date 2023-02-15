@@ -42,7 +42,8 @@ const Cart = (props) => {
 		}
 		return bonusArr;
 	};
-    <div className='birdsCart'>
+	
+    <div className='birds Cart'>
         return (
 			<h4>Total: ${`100`}</h4>
 			<ol>{display(props.addBird)}</ol>
