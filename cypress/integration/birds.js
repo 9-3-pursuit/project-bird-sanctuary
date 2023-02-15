@@ -1,6 +1,6 @@
 import birdData from "../../src/data/birds";
 
-const { PORT = 3000 } = process.env;
+const { PORT=3000 } = process.env;
 
 describe("Birds cards", () => {
   before(() => {
@@ -21,6 +21,7 @@ describe("Birds cards", () => {
 
 const addShoeBillToCart = () => {
   cy.get("button").first().click();
+
 };
 
 const addFlycatcherToCart = () => {
