@@ -1,16 +1,15 @@
 import "./BirdCard.css";
 import { v4 as uuidv4 } from "uuid";
 
-export default function BirdCard({
-  bird: { name, img, amount, id },
-  dispatch,
-  currentMode,
-}) {
-  function handleAddToCart(birdToAddToList) {
+export default function BirdCard({ bird, dispatch, currentMode }) {
+  const { name, img, amount, id } = bird;
+
+  function handleAddToCart() {
+    const BIRD_TO_ADD_TO_LIST = { name, amount, id: uuidv4() };
     dispatch({
       type: "added",
-      birdToAddToList: birdToAddToList,
-      amount: birdToAddToList.amount,
+      birdToAddToList: BIRD_TO_ADD_TO_LIST,
+      amount: amount,
     });
   }
 
@@ -19,14 +18,7 @@ export default function BirdCard({
       <h5>{name}</h5>
       <p>Price: ${amount}</p>
       <img src={img} alt={name} />
-      <button
-        onClick={() =>
-          handleAddToCart({ name: name, amount: amount, id: uuidv4() })
-        }
-      >
-        {" "}
-        Adopt
-      </button>
+      <button onClick={handleAddToCart}> Adopt</button>
     </div>
   );
 }
