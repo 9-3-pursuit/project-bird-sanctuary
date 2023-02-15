@@ -1,12 +1,13 @@
 import React from 'react'
-import birdData from '../data/birds'
+import birdData from "../data/birds"
 
-class BirdCards extends React.Component {
 
-    render() {
 
-   let birdy = birdData.map ((bird)=> {
-    return (
+    
+
+    const BirdCards = birdData.map ((bird)=> {
+    
+        return (
   
 
 
@@ -21,11 +22,11 @@ class BirdCards extends React.Component {
 )
 
    })
-   return (
-    <div>{birdy}</div>
-   )
-}   
-}
+   
+  
+   
+  
+
 
 
        

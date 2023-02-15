@@ -1,27 +1,31 @@
-import React from 'react'
+import React,{useState} from 'react'
 import birdData from '../data/birds'
 
-class Cart extends React.Component {
-    render () {
-        const {newSelectedBirds} = this.props
+
+         const {newSelectedBirds} = this.props
+            
+        
     
-    const addtoCart = ()=> {
-    }
+    const addtoCart= ()=> {
+    
         return (
-            <div className='cart'>
+            <div className="Cart">
                 <h3>Cart</h3>
                 <h4>Total:</h4>
                 <ol>
                     <li></li>
                 </ol>
-            </div>
-         )
-    }
+         
+           </div>
+
+        
+        )
+        
 }
+        
+   
+       
 
+    
 
-
-
-
-
-export default Cart
+export default Cart;
