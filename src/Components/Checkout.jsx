@@ -14,7 +14,6 @@ export default function Checkout({ onSubmit }) {
   }
 
   function handleAlert(e) {
-    console.log();
     e.preventDefault();
     alert("Oh no! Fill the form the complete your adoption.");
   }

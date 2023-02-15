@@ -2,7 +2,7 @@
 import BirdCard from "./Components/BirdCard";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
-/*         CSS, Data, State         */
+/*         Data, State, CSS        */
 import birdData from "./data/birds";
 import { useReducer } from "react";
 import { cartReducer, INITIAL_STATE } from "./cartReducer";
