@@ -18,8 +18,8 @@ function App() {
 
   return (
     <main className={currentMode}>
-      <Header>
-      <Cart cart={cart} dispatch={dispatch} isDark currentMode={currentMode} />
+      <Header setDark={setDark} />
+      <Cart cart={cart} dispatch={dispatch} currentMode={currentMode} />
       <Checkout dispatch={dispatch} currentMode={currentMode} />
       <div className="bird-section">
         {birdData.map((bird) => (
