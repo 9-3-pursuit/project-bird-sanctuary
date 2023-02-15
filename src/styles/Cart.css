@@ -1,0 +1,15 @@
+.Cart {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  border: 1px solid #ccc;
+  /* width: 25em; */
+  height: auto;
+  border-radius: 1em;
+  text-align: center;
+  background-color: #142d4c;
+  position: relative;
+}
+
+/* .Cart ol li {
+  grid-row: 1;
+} */

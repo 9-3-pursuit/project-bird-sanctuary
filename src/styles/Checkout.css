@@ -1,0 +1,14 @@
+.Checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+
+  background-color: #38598b;
+  border-radius: 1em;
+  border: 1px solid #ccc;
+}
+
+.Checkout #submit-button {
+  color: #fff;
+}
