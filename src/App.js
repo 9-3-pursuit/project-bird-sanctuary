@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="cart-wrapper">
-        <Cart cartItems={cartItems} />
+        <Cart cartItems={cartItems} setCartItems={setCartItems} />
         <Checkout setCartItems={setCartItems} />
       </div>
       <div className="birds-wrapper">

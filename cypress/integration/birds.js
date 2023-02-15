@@ -82,6 +82,8 @@ describe("It can total the birds in the cart", () => {
   });
   it("Can get the total for multiple birds in the cart", () => {
     addManyBirdsToCart();
+    // need to wait because not all birds added to cart otherwise
+    cy.wait(1000);
     cy.get(".Cart").within(() => {
       cy.get("h4")
         .invoke("text")
@@ -154,28 +156,44 @@ const formData = {
 
 const completeForm = (params = {}) => {
   const data = { ...formData, ...params };
-  const { firstName, lastName, email, zipCode } = data;
+  const { firstName, lastName, email, creditCard, zipCode } = data;
   if (firstName) {
-    cy.get("form").contains("First Name").type(firstName);
+    cy.get("form")
+      .contains("label", "First Name")
+      .parent()
+      .find("input")
+      .type(firstName);
   }
-  cy.get("form").contains("Last Name").type(lastName);
-  cy.get("form").contains("Email").type(email);
-  cy.get("form").contains("Zip Code").type(zipCode);
+  cy.get("form")
+    .contains("label", "Last Name")
+    .parent()
+    .find("input")
+    .type(lastName);
+  cy.get("form").contains("label", "Email").parent().find("input").type(email);
+  cy.get("form")
+    .contains("label", "Zip Code")
+    .parent()
+    .find("input")
+    .type(zipCode);
 };
 
 describe("Checkout and reset", () => {
   before(() => {
     cy.visit(`http://localhost:${PORT}`);
     cy.get(".birds button").first().click();
+    // slow down the tests to help see what is happening for debugging
+    cy.wait(500);
   });
 
   it("I can complete the inputs in the checkout form", () => {
     completeForm();
     const values = Object.values(formData);
     cy.get("input[type=submit]").each((input) => {
-      const value = input.val();
+      const value = cy.wrap(input).invoke("val");
       values.includes(value);
     });
+    // slow down the tests to help see what is happening for debugging
+    cy.wait(500);
   });
 
   let stub;
@@ -216,6 +234,7 @@ describe("Can delete a bird and update the cart accordingly", () => {
       })
       .then(() => {
         cy.get(".Cart").within(() => {
+          cy.contains("Boat Billed Heron").should("not.exist");
         });
       });
   });
@@ -223,6 +242,7 @@ describe("Can delete a bird and update the cart accordingly", () => {
     cy.get(".Cart li")
       .eq(1)
       .within(() => {
+        cy.get("button").click();
       })
       .then(() => {
         cy.get(".Cart").within(() => {
