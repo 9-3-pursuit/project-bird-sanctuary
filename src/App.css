@@ -1,0 +1,9 @@
+body {
+    display: grid;
+}
+
+.bird-card {
+    display:grid;
+    margin:auto;
+    
+}
