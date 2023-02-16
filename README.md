@@ -5,6 +5,15 @@
 ## Getting Started
 
 - Fork this repo
+
+The URL is:
+```
+https://magical-queijadas-174558.netlify.app/
+```
+
+
+
+
 - Clone the forked repository
 - `cd` to the directory where you cloned it
 - `npm install` to install dependencies
