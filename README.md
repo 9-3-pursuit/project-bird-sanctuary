@@ -1,6 +1,12 @@
 [![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
 # Bird Sanctuary
+To view the app [Click Here](https://teal-torrone-4312ea.netlify.app/)
+
+This is th netlify deployed Url: 
+```
+https://teal-torrone-4312ea.netlify.app/
+```
 
 ## Getting Started
 
