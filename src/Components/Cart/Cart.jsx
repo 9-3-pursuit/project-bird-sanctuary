@@ -1,8 +1,13 @@
 import "./Cart.css";
 import bonusItems from "../../data/bonusItems";
 import CartItem from "./CartItem";
+import { useContext } from "react";
+import { ModeContext, CartDispatchContext } from "../../data/modeContext";
 
-export default function Cart({ dispatch, cart: { total, list }, currentMode }) {
+export default function Cart({ cart: { total, list } }) {
+  const currentMode = useContext(ModeContext);
+  const dispatch = useContext(CartDispatchContext);
+
   const DISCOUNT = list.length >= 3 ? 0.1 : 0;
   const DISCOUNTED_TOTAL = total - total * DISCOUNT;
 

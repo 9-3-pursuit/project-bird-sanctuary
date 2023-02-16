@@ -5,7 +5,7 @@ import Checkout from "./Components/Checkout/Checkout";
 import Header from "./Components/Header/Header";
 /*         Data, State, CSS        */
 import birdData from "./data/birds";
-// import ModeContext from "./data/modeContext";
+import { ModeContext, CartDispatchContext } from "./data/modeContext";
 import { useReducer, useState } from "react";
 import { cartReducer, INITIAL_STATE } from "./data/cartReducer";
 import "./App.css";
@@ -17,21 +17,20 @@ function App() {
   const currentMode = isDark ? "dark" : "light";
 
   return (
-    <main className={currentMode}>
-      <Header setDark={setDark} />
-      <Cart cart={cart} dispatch={dispatch} currentMode={currentMode} />
-      <Checkout dispatch={dispatch} currentMode={currentMode} />
-      <div className="bird-section">
-        {birdData.map((bird) => (
-          <BirdCard
-            key={bird.id}
-            bird={bird}
-            dispatch={dispatch}
-            currentMode={currentMode}
-          />
-        ))}
-      </div>
-    </main>
+    <ModeContext.Provider value={currentMode}>
+      <CartDispatchContext.Provider value={dispatch}>
+        <main className={currentMode}>
+          <Header setDark={setDark} />
+          <Cart cart={cart} />
+          <Checkout />
+          <div className="bird-section">
+            {birdData.map((bird) => (
+              <BirdCard key={bird.id} bird={bird} />
+            ))}
+          </div>
+        </main>
+      </CartDispatchContext.Provider>
+    </ModeContext.Provider>
   );
 }
 

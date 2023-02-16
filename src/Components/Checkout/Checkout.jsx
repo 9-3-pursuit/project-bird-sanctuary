@@ -1,7 +1,12 @@
 import "./Checkout.css";
 import { useState } from "react";
+import { useContext } from "react";
+import { ModeContext, CartDispatchContext } from "../../data/modeContext";
 
-export default function Checkout({ dispatch, currentMode }) {
+export default function Checkout() {
+  const currentMode = useContext(ModeContext);
+  const dispatch = useContext(CartDispatchContext);
+
   const INITIAL_STATE = {
     firstName: "",
     lastName: "",
@@ -11,9 +16,8 @@ export default function Checkout({ dispatch, currentMode }) {
 
   const [form, setForm] = useState(INITIAL_STATE);
 
-  function handleChange(e) {
+  const handleChange = (e) =>
     setForm({ ...form, [e.target.id]: e.target.value });
-  }
 
   function handleSubmit(e) {
     e.preventDefault();

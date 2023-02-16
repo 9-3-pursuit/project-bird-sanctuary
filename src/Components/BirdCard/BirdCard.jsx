@@ -1,7 +1,12 @@
 import "./BirdCard.css";
 import { v4 as uuidv4 } from "uuid";
+import { useContext } from "react";
+import { ModeContext, CartDispatchContext } from "../../data/modeContext";
 
-export default function BirdCard({ bird, dispatch, currentMode }) {
+export default function BirdCard({ bird }) {
+  const currentMode = useContext(ModeContext);
+  const dispatch = useContext(CartDispatchContext);
+
   const { name, img, amount, id } = bird;
 
   function handleAddToCart() {
