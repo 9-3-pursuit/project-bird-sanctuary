@@ -1,13 +1,12 @@
 /*           Components           */
-import BirdCard from "./Components/BirdCard/BirdCard";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import Header from "./Components/Header/Header";
+import BirdSection from "./Components/BirdCard/BirdSection";
 /*         Data, State, CSS        */
-import birdData from "./data/birds";
+import { cartReducer, INITIAL_STATE } from "./data/cartReducer";
 import { ModeContext, CartDispatchContext } from "./data/modeContext";
 import { useReducer, useState } from "react";
-import { cartReducer, INITIAL_STATE } from "./data/cartReducer";
 import "./App.css";
 
 function App() {
@@ -23,11 +22,7 @@ function App() {
           <Header setDark={setDark} />
           <Cart cart={cart} />
           <Checkout />
-          <div className="bird-section">
-            {birdData.map((bird) => (
-              <BirdCard key={bird.id} bird={bird} />
-            ))}
-          </div>
+          <BirdSection />
         </main>
       </CartDispatchContext.Provider>
     </ModeContext.Provider>
