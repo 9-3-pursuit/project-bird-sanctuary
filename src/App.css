@@ -22,14 +22,16 @@
     background-color: rgb(187, 219, 219);
     border: 2px solid gray;
     padding: .5em;
+    max-height: fit-content;
 }
 .cart {
     position: absolute;
-    top: 50px;
+    top: 75px;
     left: 50px;
     padding: 50px;
     min-height: 300px;
-    min-width: 250px;
+    max-height: fit-content;
+    max-width: 250px;
     align-content: initial;
     text-align: center;
     border: 2px solid darkgray;
@@ -37,8 +39,8 @@
 }
 .checkoutForm {
     position: absolute;
-    top: 800px;
-    left: 100px;
+    top: 650px;
+    left: 50px;
     padding: 50px;
     min-height: 300px;
     min-width: 250px;
