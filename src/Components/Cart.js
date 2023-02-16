@@ -9,21 +9,26 @@ export default function Cart({ birdCart, discount }) {
     let cartTotal = 0
     let cartDiscount = 0
 
-    function removeBird(index) {
-        adoptBird = adoptBird.filter((event, i) => i !== index)
-        cartDiscount = false
-    }
+    // function removeBird(index) {
+    //     adoptBird = adoptBird.filter((event, i) => i !== index)
+    //     cartDiscount = false
+    // }
 
     for (let i = 0; i < birdCart.length; i++) {
         cartTotal += birdCart[i].amount
     }
-
-    for (let i = 0; i < birdCart.length; i++) {
-        if (birdCart.length >= 3) {
-            cartTotal = cartTotal * 0.9
-            cartDiscount = true
-        }
+    if (birdCart.length <= 2) {
+        cartDiscount = 0
+    } else {
+        cartDiscount = .10
     }
+
+    // for (let i = 0; i < birdCart.length; i++) {
+    //     if (birdCart.length >= 3) {
+    //         cartTotal = cartTotal * 0.9
+    //         cartDiscount = true
+    //     }
+    // }
 
 
     const cartInfo = birdCart.map((element) => {
