@@ -1,0 +1,139 @@
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    margin: 10px 80px;
+    column-gap: 80px;
+}
+
+aside {
+    display: grid;
+    grid-template-rows: 380px;
+    row-gap: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-column: 2 / 3;
+    justify-items: center;
+}
+
+.birds {
+    display: grid;
+    height: 250px;
+    width: 220px;
+    justify-items: center;
+    text-align: center;
+    background: #e0f6f2;
+    box-shadow: 3px 3px 10px #3e3d3d;
+    border-radius: 5px;
+}
+
+.cardImg {
+    height: 100px;
+    width: 100px;
+}
+
+.cardHeader {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.cardPrice {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cardHeader,
+.cardPrice,
+.cardImg,
+.cardButton {
+    margin: 0;
+}
+
+.cardImg {
+    box-shadow: 2px 2px 5px;
+}
+
+.cardButton {
+    color: black;
+    height: 30px;
+    line-height: 0px;
+}
+
+form, .Cart {
+    display: grid;
+    border: 1px solid black;
+    text-align: center;
+    justify-items: center;
+    height: 380px;
+}
+
+.Cart {
+    grid-template-rows: 100px 1fr;
+}
+
+.cartTopInfo {
+    height: 100px;
+}
+
+.asideHeader {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.asideHeader,
+.discount,
+.total {
+    margin: 5px;
+}
+
+label {
+    font-size: 12px;
+}
+
+input {
+    height: 25px !important;
+    width: 150px;
+}
+
+#submit {
+    color: black !important;
+    font-size: 10px !important;
+    width: 70px;
+    line-height: 0px !important;
+    padding: 0px !important;
+}
+
+.donations {
+    font-weight: 600;
+    margin: 0;
+}
+
+ol,
+.item, 
+.bonusItem {
+    margin: 0;
+}
+
+.item {
+
+}
+
+h4 {
+    font-size: 16px;
+}
+
+.delete {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    line-height: 0;
+    border: none;
+    cursor: pointer;
+    margin-left: 0px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
