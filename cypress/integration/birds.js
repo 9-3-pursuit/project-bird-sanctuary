@@ -8,7 +8,7 @@ describe("Birds cards", () => {
   });
 
   it("Displays the name, photo, and amount", () => {
-    birdData.forEach((bird) => {
+    birdData.forEach((bird) =>  {
       const { name, amount, img } = bird;
 
       cy.get(".card")
