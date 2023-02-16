@@ -1,9 +1,8 @@
 import {v1 as generateUniqueID} from "uuid";
-import { useEffect } from "react";
 
  
 
-export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscount }) {
+export default function Birdcard({ birdData, cartQueue, setCartQueue }) {
 
 
     function addCardToCart(bird) {
@@ -13,11 +12,6 @@ export default function Birdcard({ birdData, cartQueue, setCartQueue, setDiscoun
             id: generateUniqueID()
         }])
     }
-
-    useEffect(() => {
-        cartQueue.length >= 3 ? setDiscount(10) : setDiscount(0)
-    }, [cartQueue, setCartQueue, setDiscount])
-
 
     return(
         <div className="card">
