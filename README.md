@@ -1,6 +1,7 @@
 [![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
 # Bird Sanctuary
+Netlify URL link[Click Here](https://effulgent-lebkuchen-6f4c70.netlify.app/)
 https://effulgent-lebkuchen-6f4c70.netlify.app/
 ## Getting Started
 
