@@ -25,6 +25,7 @@ main {
     min-height: 360px;
     box-shadow: 2px 2px 4px black;
     border-radius: 10px;
+    border-color: 2px solid black;
     grid-template-rows: 1fr 1fr 1fr;
     padding: 1em;
     box-sizing: border-box;
@@ -45,6 +46,14 @@ main {
     grid-template-rows: auto;
     justify-content: right;
   }
+
+  /* ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px 50px 0 50px;
+  } */
+
+  
 
 
 

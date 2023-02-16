@@ -22,7 +22,7 @@ function Checkout ({cart, setMyCart}) {
                 <label htmlFor="email">Email</label>
                     <input type='email' id='email' name='email' required></input>
                 <label htmlFor="zipcode">Zip Code</label>
-                    <input type='zipCode' id='zipcode' name='zipcode' required></input>
+                    <input type='Number' id='zipcode' name='zipcode' required></input>
                     <br></br>
                     <input type='submit' />
             </form> 

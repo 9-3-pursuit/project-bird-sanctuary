@@ -45,7 +45,7 @@ function Cart({myCart, setMyCart}) {
             <button className="delButton" onClick={() => deleteBirdFromCart(index)}>Delete</button>
             </li>))}
         </ol>
-        <p>Your donation has qualified for the following bonus items:</p>
+        <p>Your donation has qualified for the following items:</p>
         <ul>{bonus.map(( b,index ) => { return <li key={index}>{b}</li>;})}</ul>
        </div>
     )
