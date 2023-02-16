@@ -1,0 +1,12 @@
+.Checkout {
+  grid-row: 3 / 4;
+}
+
+.Checkout h4 {
+  margin-bottom: 1rem;
+}
+
+.Checkout input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
