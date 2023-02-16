@@ -175,7 +175,7 @@ describe("Checkout and reset", () => {
 
   it("I can complete the inputs in the checkout form", () => {
     completeForm();
-    const values = Object.values(formData);
+    const values =  Object.values(formData);
     cy.get("input[type=submit]").each((input) => {
       const value = cy.wrap(input).invoke("val");
       values.includes(value);
