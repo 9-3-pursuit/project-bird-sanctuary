@@ -46,6 +46,10 @@ header {
   text-align: center;
 }
 
+header > * {
+  margin-bottom: 2rem;
+}
+
 section {
   width: 40rem;
   min-height: 40rem;
