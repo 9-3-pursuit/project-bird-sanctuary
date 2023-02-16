@@ -14,7 +14,6 @@ export default function CheckoutForm({ setCartQueue, discount }) {
         alert("You have adopted birds. Thank you!");
         setCartQueue([])
         discount = 0
-        console.log(user)
         setUser(initialState)
     }
 
