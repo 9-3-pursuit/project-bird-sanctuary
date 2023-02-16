@@ -13,7 +13,7 @@ import Checkout from "./components/Checkout";
 function App () {
 
   const [cart, setMyCart] = useState({total: 0, discount: false, adopted:[]}); 
-
+  
 
   return (
     <div>

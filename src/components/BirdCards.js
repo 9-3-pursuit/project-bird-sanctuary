@@ -32,11 +32,11 @@ import birdData from "../data/birds.js";
        } 
 
     return(
-        <div className="card">
+        <div className="birds">
           <ul>
             {birdData.map((bird, index) => {
               return (
-                <li key={index} className="Card">
+                <li key={index} className="card">
                 <h3>{bird.name}</h3>
                 <img src={bird.img} alt=''/>
                 <p>Price {bird.amount}</p>
