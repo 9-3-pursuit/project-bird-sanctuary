@@ -2,7 +2,7 @@ import birdData from "../../src/data/birds";
 
 const { PORT = 3000 } = process.env;
 
-describe("Birds cards", () => {
+describe("Birds cards",  () => {
   before(() => {
     cy.visit(`http://localhost:${PORT}`);
   });
