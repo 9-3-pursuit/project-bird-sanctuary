@@ -1,0 +1,12 @@
+#birdmarket {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.card {
+    color: aliceblue;
+    border: 5px solid goldenrod;
+    background-color: rgb(1, 19, 94);
+}
