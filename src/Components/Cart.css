@@ -1,0 +1,92 @@
+.Cart {
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+  box-shadow: 2px 2px 8px 4px rgb(171, 242, 185);
+  border: 2px solid rgb(216, 215, 216);
+  font-family: "Roboto Mono";
+  align-items: center;
+  margin-bottom: 20%;
+  background-color: rgb(228, 245, 242);
+}
+
+.Cart__heading {
+  margin-top: 5%;
+  font-size: 40px;
+  color: rgb(46, 96, 54);
+}
+
+.Cart__discount,
+.Cart__total {
+  font-size: 30px;
+}
+
+.style__list__birds ol{
+  list-style: none;
+  padding: 0;
+}
+
+.style__list__birds ol li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.list-number {
+  width: 10%;
+  margin-right: 10px;
+}
+
+.list-name {
+  width: 50%;
+}
+
+.list-price {
+  width: 20%;
+}
+
+.style__list__bonus ul li,
+.style__list__bonus p {
+  margin-bottom: 20px;
+  font-size: 15.5px;
+  margin-right: 5px;
+  text-align: left;
+  margin-top:20px;
+}
+
+.style__list__bonus ul li {
+  margin-left: 70px;
+  list-style-type: square;
+}
+
+.style__list__bonus p {
+  margin-left: 18px;
+}
+
+.delete__list {
+  width: 30px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2%;
+  background-color: rgb(222, 218, 218);
+  border:2px solid black;
+  margin-right: 15px;
+}
+
+.delete__list:hover{
+  cursor: pointer;
+  background-color: rgb(171, 242, 185);
+  box-shadow: 2px 2px 8px 4px grey;
+  transition: box-shadow 0.5s ease-in;
+  color: rgb(3, 56, 35);
+  border:2px solid black;
+}
+
+.fas.fa-backspace { 
+  font-size: 30px;
+  color: #ed0404;
+}
