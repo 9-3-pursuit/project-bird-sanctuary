@@ -1,50 +1,58 @@
-.header {
-    text-align: center;
+.aside {
+    border: 2px solid lightgray;
 }
-#grid {
+
+.main-grid {
+    padding: 20px;
     display: grid;
-    /* box-sizing: border-box; */
-    width: 50%;
-    height: 50%;
-    grid-template-columns: 1fr 1fr 1fr;
- 
-    grid-template-rows: auto;
-    justify-content: center;
-    grid-gap: 5px;
-    margin-left: auto;
-    margin-right: 0;
+    grid-template-columns: 250px auto;
+    row-gap: 20px;
 }
-   
-    
-  
-#grid .card {
-    text-align: center;
-    background-color: rgb(187, 219, 219);
-    border: 2px solid gray;
-    padding: .5em;
-    max-height: fit-content;
-}
+
 .cart {
-    position: absolute;
-    top: 75px;
-    left: 50px;
-    padding: 50px;
-    min-height: 300px;
-    max-height: fit-content;
-    max-width: 250px;
-    align-content: initial;
-    text-align: center;
-    border: 2px solid darkgray;
-    
+    grid-column-start: 1;
 }
-.checkoutForm {
-    position: absolute;
-    top: 650px;
-    left: 50px;
-    padding: 50px;
-    min-height: 300px;
-    min-width: 250px;
-    align-content: initial;
+
+.checkout {
+    grid-column-start: 1;
+}
+
+.bird-cards {
+    grid-row: 1 / span 2;
+    grid-column-start: 2;
+}
+
+.App {
     text-align: center;
-    border: 2px solid darkgray;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #E1F7F3;
+    box-shadow: 3px 3px 2px lightgray;
+    height: 100%;
+}
+
+.bird-card p {
+    margin: 0;
+}
+
+.card img {
+    max-width: 150px;
+    margin: 20px 0;
+}
+.bird-cards {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.bird-cards li {
+    list-style: none;
 }

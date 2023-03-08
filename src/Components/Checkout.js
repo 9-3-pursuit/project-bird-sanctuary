@@ -1,10 +1,12 @@
 import React from "react";
+import "../App.css"
+
 
 export default function Checkout() {
   return (
-    <div className="checkoutForm">
+    <div className="aside checkoutForm">
       <aside>
-        <h4>Checkout</h4>
+        <h4>🐦➰ Checkout ➰🐦</h4>
         <form>
           <label htmlFor="firstName">First Name</label>
           <input
@@ -42,7 +44,7 @@ export default function Checkout() {
             // value=""
           />
           <br></br>
-          <button type="submit"> Submit </button>
+          <button onClick={(()=> alert("I Adopted!"))} type="submit"> Submit </button>
         </form>
       </aside>
     </div>
