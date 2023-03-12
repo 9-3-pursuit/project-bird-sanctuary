@@ -6,12 +6,14 @@ import BirdCard from "./Components/BirdCard";
 import { useState } from "react";
 function App () {
   const [cart, updateCart] = useState([]);
+  const [bonus, setBonus] = useState([])
   return (
     <>
-    <div className="cart">
-      <Cart cart={cart} updateCart={updateCart}/>
+    <div className="Cart">
+      <Cart setBonus={setBonus} bonus={bonus} cart={cart} updateCart={updateCart}/>
     </div>
     <div className="checkout">
+      <Checkout setBonus={setBonus} updateCart={updateCart}/>
     </div>
     <div className="card">
       <ul>
