@@ -15,7 +15,7 @@ export default function AllBirds({ birdData, setBirdCart, birdCart }) {
             </div>)
     })
     return (
-        <div>
+        <div className="birds">
             {birds}
         </div>
     );

@@ -3,16 +3,34 @@ import { useState } from "react";
 import AllBirds from "./Allbirds";
 import Checkout from "./Checkout";
 import bonusItems from "../data/bonusItems";
+import { createEvent } from "@testing-library/react";
 
-export default function Cart({ birdCart, discount }) {
+export default function Cart({ birdCart, discount, removeFromCart }) {
+
+
     const adoptBird = birdCart.id
     let cartTotal = 0
     let cartDiscount = 0
+    // const bonusItems = getBonusItems(cartTotal).map((bonusStr, i) => {
+    //     <li key={i}>{bonusStr}</li>
 
-    // function removeBird(index) {
-    //     adoptBird = adoptBird.filter((event, i) => i !== index)
-    //     cartDiscount = false
-    // }
+    function getBonusItems(birdCart) {
+        if (cartTotal < 100) {
+            return [];
+        }
+        if (cartTotal < 300) {
+            return [bonusItems[0]]
+        } else if (cartTotal < 500) {
+            return [bonusItems[0]], [bonusItems[1]]
+        } else if (cartTotal < 1000) {
+        } else {
+
+        }
+
+    }
+    function removeFromCart(index) {
+        adoptBird = adoptBird.filter((event, i) => i !== index)
+    }
 
     for (let i = 0; i < birdCart.length; i++) {
         cartTotal += birdCart[i].amount
@@ -20,16 +38,8 @@ export default function Cart({ birdCart, discount }) {
     if (birdCart.length <= 2) {
         cartDiscount = 0
     } else {
-        cartDiscount = .10
+        cartDiscount = 0.10
     }
-
-    // for (let i = 0; i < birdCart.length; i++) {
-    //     if (birdCart.length >= 3) {
-    //         cartTotal = cartTotal * 0.9
-    //         cartDiscount = true
-    //     }
-    // }
-
 
     const cartInfo = birdCart.map((element) => {
 
@@ -37,6 +47,7 @@ export default function Cart({ birdCart, discount }) {
 
             <li key={element.id}>
                 {element.name} ${element.amount}
+                {/* <button onClick={() => { removeFromCart() }}>Remove</button> */}
             </li>
         )
     })
@@ -46,12 +57,13 @@ export default function Cart({ birdCart, discount }) {
     return (
         <div className="Cart">
 
-            <h1>Cart</h1>
+            <h3>Cart</h3>
             <h4>Discount: {cartDiscount}%</h4>
             <h4>Total: $ {cartTotal}</h4>
             <ol>
                 {cartInfo}
             </ol>
+            <p></p>
         </div>
     )
 

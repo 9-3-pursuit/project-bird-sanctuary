@@ -1,27 +1,24 @@
 import { useState } from "react";
 
 export default function Checkout() {
-    const [firstName, setFirstName] = useState({})
-    const [lastName, setLastName] = useState({})
-    const [email, setEmail] = useState({})
-    const [zipCode, setZipCode] = useState({})
-    const [submit, setSubmit] = useState({})
 
-    function handleFirstNameChange(event) {
-        setFirstName(event.target.value)
+    const initialContact = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        zipCode: "",
+
     }
-    function handleLastNameChange(event) {
-        setLastName(event.target.value)
+
+    const [contactInfo, setContactInfo] = useState(initialContact)
+
+    function handleContactInfo(event) {
+        setContactInfo({ ...contactInfo, [event.target.id]: event.target.value })
     }
-    function handleEmailChange(event) {
-        setEmail(event.target.value)
-    }
-    function handleZipCodeChange(event) {
-        setZipCode(event.target.value)
-    }
+
     function handleSubmit(event) {
         event.preventDefault();
-        setSubmit(event.target.value)
+        setContactInfo(initialContact)
         alert("You have adopted birds. Thank you!")
 
     }
@@ -31,24 +28,36 @@ export default function Checkout() {
                 <form onSubmit={handleSubmit}>
                     <h6>
                         <input
+                            id="firstName"
+                            value={contactInfo.firstName}
                             type="text"
                             placeholder="First Name"
-                            onChange={handleFirstNameChange}
+                            onChange={handleContactInfo}
+                            required
                         />
                         <input
+                            id="lastName"
+                            value={contactInfo.lastName}
                             type="text"
                             placeholder="Last Name"
-                            onChange={handleLastNameChange}
+                            onChange={handleContactInfo}
+                            required
                         />
                         <input
+                            id="email"
+                            value={contactInfo.email}
                             type="text"
                             placeholder="Email"
-                            onChange={handleEmailChange}
+                            onChange={handleContactInfo}
+                            required
                         />
                         <input
+                            id="zipCode"
+                            value={contactInfo.zipCode}
                             type="text"
                             placeholder="Zip Code"
-                            onChange={handleZipCodeChange}
+                            onChange={handleContactInfo}
+                            required
                         />
                         <button>Submit</button>
                     </h6>
