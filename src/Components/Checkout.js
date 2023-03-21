@@ -6,7 +6,7 @@ export default function Checkout({resetCart}) {
   return (
     <div className="aside Checkout">
       <aside>
-        <h4>🐦➰ Checkout ➰🐦</h4>
+        <h4>🐦➰Checkout➰🐦</h4>
         <form>
           <label htmlFor="firstName">First Name</label>
           <input

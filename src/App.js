@@ -29,7 +29,7 @@ function App() {
       <header>
 
       </header>
-        <h1>➰🐦🌸🐦 ➰Bird Sanctuary ➰🐦🌼🐦➰</h1>
+        <h1>➰🐦➰Bird Sanctuary ➰🐦➰</h1>
         <div className="main-grid">
           <BirdsDisplay addToCart={addToCart} />
           <Cart bonusItems={bonusItems} cart={cart} addToCart={addToCart} setCart={setCart} />

@@ -10,17 +10,26 @@
 }
 
 .Cart {
-   
-    grid-column-start: 1;
+    background-color: #E1F7F3;
+    grid-column-start: 4;
+    margin-right: 0%;
+    max-width: 60%;
+    height: fit-content;
 }
 
-.checkout {
-    grid-column-start: 1;
+.Checkout {
+    position: relative;
+    margin-right: 0%;
+    max-width: 60%;
+    background-color: #E1F7F3;
+    grid-column-start: 4;
 }
 
 .bird-cards {
-    grid-row: 1 / span 2;
-    grid-column-start: 2;
+    margin-right: 0%;
+    margin-left: 50%;
+    /* grid-row: 1 / span 2; */
+    grid-column-end: 3;
 }
 
 .App {
