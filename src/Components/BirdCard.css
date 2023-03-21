@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #E1F7F3;
+    box-shadow: 3px 3px 2px lightgray;
+    height: 100%;
+}
+
+.bird-card p {
+    margin: 0;
+}
+
+.card img {
+    max-width: 150px;
+    margin: 20px 0;
+}

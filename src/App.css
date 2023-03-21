@@ -1,0 +1,70 @@
+.aside {
+    border: 2px solid lightgray;
+}
+
+.main-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    row-gap: 20px;
+}
+
+.Cart {
+    background-color: #E1F7F3;
+    grid-column-start: 4;
+    margin-right: 0%;
+    margin-left: 50%;
+    max-width: 60%;
+    height: fit-content;
+}
+
+.Checkout {
+    position: relative;
+    margin-right: 0%;
+    margin-left: 50%;
+    max-width: 60%;
+    background-color: #E1F7F3;
+    grid-column-start: 4;
+}
+
+.bird-cards {
+    margin-right: 0%;
+    margin-left: 50%;
+    /* grid-row: 1 / span 2; */
+    grid-column-start: 3;
+}
+
+.App {
+    text-align: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #E1F7F3;
+    box-shadow: 3px 3px 2px lightgray;
+    height: 100%;
+}
+
+.bird-card p {
+    margin: 0;
+}
+
+.card img {
+    max-width: 150px;
+    margin: 20px 0;
+}
+.bird-cards {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.bird-cards li {
+    list-style: none;
+}

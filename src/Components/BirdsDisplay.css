@@ -1,0 +1,12 @@
+.bird-display {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.bird-display li {
+    list-style: none;
+}
