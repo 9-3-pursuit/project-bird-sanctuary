@@ -13,6 +13,7 @@
     background-color: #E1F7F3;
     grid-column-start: 4;
     margin-right: 0%;
+    margin-left: 50%;
     max-width: 60%;
     height: fit-content;
 }
@@ -20,6 +21,7 @@
 .Checkout {
     position: relative;
     margin-right: 0%;
+    margin-left: 50%;
     max-width: 60%;
     background-color: #E1F7F3;
     grid-column-start: 4;
@@ -29,7 +31,7 @@
     margin-right: 0%;
     margin-left: 50%;
     /* grid-row: 1 / span 2; */
-    grid-column-end: 3;
+    grid-column-start: 3;
 }
 
 .App {
