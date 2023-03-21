@@ -2,9 +2,9 @@ import React from "react";
 import "../App.css"
 
 
-export default function Checkout() {
+export default function Checkout({resetCart}) {
   return (
-    <div className="aside checkoutForm">
+    <div className="aside Checkout">
       <aside>
         <h4>🐦➰ Checkout ➰🐦</h4>
         <form>
@@ -39,14 +39,21 @@ export default function Checkout() {
           <input
             id="zipCode"
             name="zipCode"
-            type="number"
+            type="text"
             // onChange={handeTextChange}
             // value=""
           />
-          <br></br>
-          <button onClick={(()=> alert("I Adopted!"))} type="submit"> Submit </button>
+            <br></br>
+          <input
+            id="submit"
+            name="submit"
+            type="submit"
+            onClick={resetCart}
+            // value=""
+            />
         </form>
       </aside>
     </div>
   );
 }
+            

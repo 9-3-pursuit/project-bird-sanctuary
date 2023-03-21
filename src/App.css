@@ -9,7 +9,8 @@
     row-gap: 20px;
 }
 
-.cart {
+.Cart {
+   
     grid-column-start: 1;
 }
 
